@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: Sửa cấu hinh danh mục liên quan
+-------------------------------------------------------------------------------
+Tests run: 21, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2,843.996 s <<< FAILURE! - in Sửa cấu hinh danh mục liên quan
+03_[QL Cấu hình danh mục - Sửa] Kiểm tra chức năng autocomplete thành công(Sửa cấu hinh danh mục liên quan)  Time elapsed: 225.626 s  <<< FAILURE!
+java.lang.AssertionError
+

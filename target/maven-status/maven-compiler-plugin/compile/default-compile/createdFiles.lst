@@ -1,0 +1,16 @@
+globalRecruitment/pageObjects/Home_PageObject.class
+globalRecruitment/pageObjects/F_05_ConfigCategory_Delete_PageObject.class
+globalRecruitment/pageUIs/F_03_ConfigCategory_Add_PageUI.class
+common/AppiumServer.class
+globalRecruitment/pageUIs/F_02_ConfigCategory_Search_PageUI.class
+common/CommonUI.class
+globalRecruitment/pageUIs/F_01_Login_PageUI.class
+globalRecruitment/pageObjects/F_03_ConfigCategory_Add_PageObject.class
+globalRecruitment/pageUIs/Home_PageUI.class
+globalRecruitment/pageObjects/F_02_ConfigCategory_Search_PageObject.class
+globalRecruitment/pageUIs/F_04_ConfigCategory_Edit_PageUI.class
+common/CommonJDBC.class
+globalRecruitment/pageObjects/F_01_Login_PageObject.class
+common/Constants.class
+globalRecruitment/pageObjects/F_04_ConfigCategory_Edit_PageObject.class
+common/NamedParamStatement.class

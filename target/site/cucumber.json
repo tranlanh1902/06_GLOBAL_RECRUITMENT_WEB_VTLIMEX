@@ -1,0 +1,307 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "Mở trang Thêm cấu hình danh mục thành công",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 3725452212,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "DangNhap: mở trang Đăng nhập",
+            "match": {
+              "location": "F_01_Login_PageDefinitions.dangnhap_m_trang_ng_nhp()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.NoSuchWindowException: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome\u003d85.0.4183.102)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027MV962s-MacBook-Pro.local\u0027, ip: \u0027fe80:0:0:0:18fb:9099:40e:e2a4%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.5\u0027, java.version: \u00271.8.0_201\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /var/folders/p2/v7pjrp5x0q7...}, goog:chromeOptions: {debuggerAddress: localhost:51321}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: ccab01fa9e4191a9e1161610ef96266a\n*** Element info: {Using\u003dxpath, value\u003d//input[@id\u003d\u0027submit\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat net.thucydides.core.webdriver.WebDriverFacade.findElement(WebDriverFacade.java:222)\n\tat net.serenitybdd.core.pages.WebElementResolverByLocator.resolveForDriver(WebElementResolverByLocator.java:18)\n\tat net.serenitybdd.core.pages.WebElementFacadeImpl.getElement(WebElementFacadeImpl.java:221)\n\tat net.serenitybdd.core.pages.WebElementFacadeImpl.getAttribute(WebElementFacadeImpl.java:339)\n\tat common.CommonUI.highlightElement(CommonUI.java:44)\n\tat globalRecruitment.pageObjects.F_01_Login_PageObject$ByteBuddy$QbyX17DB.highlightElement$accessor$troWPmuc(Unknown Source)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:488)\n\tat net.thucydides.core.steps.StepInterceptor.runBaseObjectMethod(StepInterceptor.java:385)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:75)\n\tat globalRecruitment.pageObjects.F_01_Login_PageObject$ByteBuddy$QbyX17DB.highlightElement(Unknown Source)\n\tat globalRecruitment.pageObjects.F_01_Login_PageObject.verifyLoginPageDisplayed(F_01_Login_PageObject.java:13)\n\tat globalRecruitment.pageObjects.F_01_Login_PageObject$ByteBuddy$QbyX17DB.verifyLoginPageDisplayed$accessor$troWPmuc(Unknown Source)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:18)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:18)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:394)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:179)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:77)\n\tat globalRecruitment.pageObjects.F_01_Login_PageObject$ByteBuddy$QbyX17DB.verifyLoginPageDisplayed(Unknown Source)\n\tat globalRecruitment.StepDefinitions.F_01_Login_PageDefinitions.dangnhap_kim_tra_trang_ng_nhp_m_thnh_cng_vi_button_login_c_hin_th(F_01_Login_PageDefinitions.java:31)\n\tat ✽.DangNhap: kiểm tra trang Đăng nhập mở thành công với button Login được hiển thị(file:src/test/java/globalRecruitment/Features/02_ConfigCategory_Add.feature:6)\n",
+              "duration": 76490168,
+              "status": "failed"
+            },
+            "line": 6,
+            "name": "DangNhap: kiểm tra trang Đăng nhập mở thành công với button Login được hiển thị",
+            "match": {
+              "location": "F_01_Login_PageDefinitions.dangnhap_kim_tra_trang_ng_nhp_m_thnh_cng_vi_button_login_c_hin_th()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1823700,
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "DangNhap: nhập dữ liệu vào các trường với dữ liệu",
+            "match": {
+              "location": "F_01_Login_PageDefinitions.dangnhap_nhp_d_liu_vo_cc_trng_vi_d_liu(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Code/Email",
+                  "Password"
+                ]
+              },
+              {
+                "cells": [
+                  "\"274018\"",
+                  "\"123456a@\""
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1838888,
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "DangNhap: nhấn button Đăng nhập",
+            "match": {
+              "location": "F_01_Login_PageDefinitions.dangnhap_nhn_button_ng_nhp()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2261318,
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "TrangChu: kiểm tra login thành công với acc \"Đỗ Văn Đô\" được hiển thị",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Đỗ Văn Đô",
+                  "offset": 45
+                }
+              ],
+              "location": "Home_PageDefinitions.trangchu_kim_tra_login_thnh_cng_vi_acc_something_c_hin_th(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1976849,
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "TrangChu: nhấn menu icon \"Quản lý cấu hình danh mục liên quan\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Quản lý cấu hình danh mục liên quan",
+                  "offset": 26
+                }
+              ],
+              "location": "Home_PageDefinitions.trangchu_nhn_menu_icon_something(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1740121,
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang Tìm kiếm cấu hình thành công với title \"DANH SÁCH CẤU HÌNH DANH MỤC LIÊN QUAN\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "DANH SÁCH CẤU HÌNH DANH MỤC LIÊN QUAN",
+                  "offset": 84
+                }
+              ],
+              "location": "F_02_ConfigCategory_Search_PageDefinitions.qlcauhinhdanhmuctimkiem_kim_tra_m_trang_tm_kim_cu_hnh_thnh_cng_vi_title_something(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1964781,
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "QLCauHinhDanhMuc-TìmKiem: nhấn button Thêm",
+            "match": {
+              "location": "F_02_ConfigCategory_Search_PageDefinitions.qlcauhinhdanhmuctmkiem_nhn_button_thm()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1549002,
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "QLCauHinhDanhMuc-Them: kiểm tra mở trang Thêm cấu hình thành công với title \"THÊM MỚI CẤU HÌNH\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "THÊM MỚI CẤU HÌNH",
+                  "offset": 77
+                }
+              ],
+              "location": "F_03_ConfigCategory_Add_PageDefinitions.qlcauhinhdanhmucthem_kim_tra_m_trang_thm_cu_hnh_thnh_cng_something(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-05T04:18:44.131Z",
+        "line": 32,
+        "name": "01_[QL Cấu hình danh mục - Thêm] Kiểm tra Thêm cấu hình thành công",
+        "description": "",
+        "id": "thêm-cấu-hình-danh-mục-liên-quan;01-[ql-cấu-hình-danh-mục---thêm]-kiểm-tra-thêm-cấu-hình-thành-công;thông-tin-thêm-cấu-hình-danh-mục-thành-công;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1816915,
+              "status": "skipped"
+            },
+            "line": 19,
+            "name": "QLCauHinhDanhMuc-Them: nhập dữ liệu màn hình Thêm cấu hình với các dữ liệu sau",
+            "match": {
+              "location": "F_03_ConfigCategory_Add_PageDefinitions.qlcauhinhdanhmucthem_nhp_d_liu_mn_hnh_thm_cu_hnh_vi_cc_d_liu_sau(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Name",
+                  "NameEnglish",
+                  "Type",
+                  "CategoryRelevant1",
+                  "CategoryRelevant2"
+                ]
+              },
+              {
+                "cells": [
+                  "\" Ngôn ngữ1 \"",
+                  "\" Ngôn ngữ english1 \"",
+                  "\"Ngôn ngữ\"",
+                  "\"Tiếng Bồ Đào Nha\"",
+                  "\"Tiếng Hàn\""
+                ]
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1669905,
+              "status": "skipped"
+            },
+            "line": 22,
+            "name": "QLCauHinhDanhMuc-Them: nhấn button Lưu",
+            "match": {
+              "location": "F_03_ConfigCategory_Add_PageDefinitions.qlcauhinhdanhmucthem_nhn_button_lu()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1560368,
+              "status": "skipped"
+            },
+            "line": 23,
+            "name": "QLCauHinhDanhMuc-Them: nhấn button OK xác nhận lưu",
+            "match": {
+              "location": "F_03_ConfigCategory_Add_PageDefinitions.qlcauhinhdanhmucthem_nhn_button_ok_xc_nhn_lu()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1574146,
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "QLCauHinhDanhMuc-TimKiem: kiểm tra thêm thành công với toast message hiển thị với nội dung \"Thao tác thực hiện thành công\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Thao tác thực hiện thành công",
+                  "offset": 92
+                }
+              ],
+              "location": "F_02_ConfigCategory_Search_PageDefinitions.qlcauhinhdanhmuctimkiem_kim_tra_thm_thnh_cng_vi_toast_message_hin_th_vi_ni_dung_something(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1584594,
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "QLCauHinhDanhMuc-Them: kiểm tra insert thành công DB bảng CAT_GROUP 1 row với dữ liệu đã thêm",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 68
+                }
+              ],
+              "location": "F_03_ConfigCategory_Add_PageDefinitions.qlcauhinhdanhmucthem_kim_tra_insert_thnh_cng_db_bng_catgroup_1_row_vi_d_liu_thm(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1487181,
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "QLCauHinhDanhMuc-Them: kiểm tra insert thành công DB bảng CATEGORY_GROUP 2 row với dữ liệu đã thêm",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 73
+                }
+              ],
+              "location": "F_03_ConfigCategory_Add_PageDefinitions.qlcauhinhdanhmucthem_kim_tra_insert_thnh_cng_db_bng_categorygroup_2_row_vi_d_liu_thm(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1575834,
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "QLCauHinhDanhMuc-Them: lấy dữ liệu column code của Cấu hình danh mục vừa thêm trong bảng CAT_GROUP",
+            "match": {
+              "location": "F_03_ConfigCategory_Add_PageDefinitions.qlcauhinhdanhmucthem_ly_d_liu_column_code_ca_cu_hnh_danh_mc_va_thm_trong_bng_catgroup()"
+            },
+            "keyword": "When "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ConfigCategory_Add"
+          }
+        ]
+      }
+    ],
+    "name": "Thêm cấu hình danh mục liên quan",
+    "description": "",
+    "id": "thêm-cấu-hình-danh-mục-liên-quan",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/globalRecruitment/Features/02_ConfigCategory_Add.feature",
+    "tags": []
+  }
+]

@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Đăng nhập" skipped="0" tests="3" time="61.34" timestamp="2021-02-26 10:04:30"><testcase name="01_[Đăng nhập] Đăng nhập thành công"/><testcase name="02_[Đăng nhập] Đăng nhập không thành công"/></testsuite>

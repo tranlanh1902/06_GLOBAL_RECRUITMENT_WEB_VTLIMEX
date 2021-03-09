@@ -1,0 +1,762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Global Recruitment</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="6e818d9a3e9b5d28d1b1c6eaaef2a08341ef28fb52557fa5bbeee2f1ab6d6701.html">Th&ecirc;m Cấu H&igrave;nh Danh Mục Li&ecirc;n Quan</a></span>
+                > <span class="truncate-60"><a
+                    href="684a7ca5a9c15ad094261419d9160c97d7666362cfbd1d00fd87fe69d310332d.html">03_ </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 26-02-2021 10:14</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Thêm Cấu Hình Danh Mục Liên Quan</span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                            <div class="requirementNarrative">Background: Mở trang Thêm cấu hình danh mục thành công
+                                    <p></p>
+                            </div>
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="f89d066f72bc34c886b99450821339872f54e579a18e568d1da68460a7a61c06.html">Configcategory Add
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-times-circle failure-icon fa-2x' title='FAILURE'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="failing-color">03_
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục là tiền điều kiện nếu field là Danh mục liên quan<br><table class='embedded'><thead><th>Type</th><th>Field</th></thead><tbody><tr><td>&lt;type&gt;</td><td>&lt;field&gt;</td></tr></tbody></table><br>And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu<br><table class='embedded'><thead><th>Field</th><th>Case</th><th>Autocomplete</th></thead><tbody><tr><td>&lt;field&gt;</td><td>&lt;case&gt;</td><td>&lt;autocomplete&gt;</td></tr></tbody></table><br>And QLCauHinhDanhMuc-Them: lấy danh sách kết quả tìm kiếm trên UI trả về<br><table class='embedded'><tbody><tr><td>Field</td></tr><tr><td>&lt;field&gt;</td></tr></tbody></table><br>And QLCauHinhDanhMuc-Them: lấy danh sách kết quả tìm kiếm DB trả về<br><table class='embedded'><thead><th>Field</th><th>Autocomplete</th><th>Type</th></thead><tbody><tr><td>&lt;field&gt;</td><td>&lt;autocomplete&gt;</td><td>&lt;type&gt;</td></tr></tbody></table><br>Then QLCauHinhDanhMuc-Them: kiểm tra danh sách kết quả tìm kiếm trên UI trả về bằng danh sách kết quả tìm kiếm DB trả về</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Assertion error</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>java.lang.AssertionError </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>globalRecruitment.StepDefinitions.F_03_ConfigCategory_Add_PageDefinitions.qlcauhinhdanhmucthem_danh_sch_kt_qu_tm_kim_trn_ui_tr_v_bng_danh_sch_kt_qu_tm_kim_db_tr_v(F_03_ConfigCategory_Add_PageDefinitions.java:240)<br />✽.QLCauHinhDanhMuc-Them: kiểm tra danh sách kết quả tìm kiếm trên UI trả về bằng danh sách kết quả tìm kiếm DB trả về(file:src/test/java/globalRecruitment/Features/02_ConfigCategory_Add.feature:75)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="panel-body">
+                    <a href="pagesource8750700840400287355.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Example: {field=Loại danh mục, case=T&igrave;m kiếm kh&ocirc;ng ra kết quả, autocomplete=&quot;@#$&quot;, type=}" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Given DangNhap: mở trang Đăng nhập" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; |" width="2400"/>
+                <img src="81df785bb0790862922e44594c4c5e8771c9fdc79fa2e31f0a39808cac865f17.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; | (completed)" width="2400"/>
+                <img src="81df785bb0790862922e44594c4c5e8771c9fdc79fa2e31f0a39808cac865f17.png" title=" And DangNhap: nhấn button Đăng nhập" width="2400"/>
+                <img src="61f16301b59a9901a80d0581717895426a3cc0c30fd48501f83bb6408ff5e41a.png" title=" And DangNhap: nhấn button Đăng nhập (completed)" width="2400"/>
+                <img src="61f16301b59a9901a80d0581717895426a3cc0c30fd48501f83bb6408ff5e41a.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị (completed)" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot;" width="2400"/>
+                <img src="a35f0fdc176f2164759c566da821de3bf0cde335af929025f31c370a78b33dfd.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot; (completed)" width="2400"/>
+                <img src="a35f0fdc176f2164759c566da821de3bf0cde335af929025f31c370a78b33dfd.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot;" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot; (completed)" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m" width="2400"/>
+                <img src="e59cb445614e0ff70d174951c76541bfc4439c49f5512f3494940dfbffefdcee.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m (completed)" width="2400"/>
+                <img src="e59cb445614e0ff70d174951c76541bfc4439c49f5512f3494940dfbffefdcee.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot;" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot; (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+|  | Loại danh mục |" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+|  | Loại danh mục | (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Loại danh mục | T&igrave;m kiếm kh&ocirc;ng ra kết quả | &quot;@#$&quot; |" width="2400"/>
+                <img src="9674445832df517ffbc11f1de0a1ec408b7f3662daab20cf019ed9faa0f5fec4.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Loại danh mục | T&igrave;m kiếm kh&ocirc;ng ra kết quả | &quot;@#$&quot; | (completed)" width="2400"/>
+                <img src="9674445832df517ffbc11f1de0a1ec408b7f3662daab20cf019ed9faa0f5fec4.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Loại danh mục |" width="2400"/>
+                <img src="14592aa0b6bec84fc38705bb121220559f14ee7e0b6ab4a14d47550cd136cb30.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Loại danh mục | (completed)" width="2400"/>
+                <img src="14592aa0b6bec84fc38705bb121220559f14ee7e0b6ab4a14d47550cd136cb30.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Loại danh mục | &quot;@#$&quot; |  |" width="2400"/>
+                <img src="9674445832df517ffbc11f1de0a1ec408b7f3662daab20cf019ed9faa0f5fec4.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Loại danh mục | &quot;@#$&quot; |  | (completed)" width="2400"/>
+                <img src="9674445832df517ffbc11f1de0a1ec408b7f3662daab20cf019ed9faa0f5fec4.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về" width="2400"/>
+                <img src="9674445832df517ffbc11f1de0a1ec408b7f3662daab20cf019ed9faa0f5fec4.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về (completed)" width="2400"/>
+                <img src="9674445832df517ffbc11f1de0a1ec408b7f3662daab20cf019ed9faa0f5fec4.png" title=" Example: {field=Loại danh mục, case=T&igrave;m kiếm kh&ocirc;ng ra kết quả, autocomplete=&quot;@#$&quot;, type=} (completed)" width="2400"/>
+                <img src="61fcdd913be46570fad8b4223a063d7015003d49b000a27877eeaa9882bdef7b.png" title=" Example: {field=Loại danh mục, case=T&igrave;m kiếm mặc định, autocomplete=&quot;&quot;, type=}" width="2400"/>
+                <img src="61fcdd913be46570fad8b4223a063d7015003d49b000a27877eeaa9882bdef7b.png" title=" Given DangNhap: mở trang Đăng nhập" width="2400"/>
+                <img src="61fcdd913be46570fad8b4223a063d7015003d49b000a27877eeaa9882bdef7b.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; |" width="2400"/>
+                <img src="87f5ed7c5c43609a6d41542d8e02b2a00fcfba5bc4a850bb5416d1bd134fa25b.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; | (completed)" width="2400"/>
+                <img src="87f5ed7c5c43609a6d41542d8e02b2a00fcfba5bc4a850bb5416d1bd134fa25b.png" title=" And DangNhap: nhấn button Đăng nhập" width="2400"/>
+                <img src="eb3f837a56809d02fd451235e8497dbdd4f78ed167c865afc6220b32f20f56b0.png" title=" And DangNhap: nhấn button Đăng nhập (completed)" width="2400"/>
+                <img src="eb3f837a56809d02fd451235e8497dbdd4f78ed167c865afc6220b32f20f56b0.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị (completed)" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot;" width="2400"/>
+                <img src="fb3c2d8f76915a9d3bfc6f6ac12d75f020d3e2b15ae4aeadf76ba7ec8ced5031.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot; (completed)" width="2400"/>
+                <img src="fb3c2d8f76915a9d3bfc6f6ac12d75f020d3e2b15ae4aeadf76ba7ec8ced5031.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot;" width="2400"/>
+                <img src="3dfe697e3a77571b0ffc6a5dac69580492cccd0e0c1f2f6febe06541e123b439.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot; (completed)" width="2400"/>
+                <img src="3dfe697e3a77571b0ffc6a5dac69580492cccd0e0c1f2f6febe06541e123b439.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m" width="2400"/>
+                <img src="b04b303b6555ad83f49f06004aabdd598ff4af99f996de7b33ae2483cebc54c6.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m (completed)" width="2400"/>
+                <img src="b04b303b6555ad83f49f06004aabdd598ff4af99f996de7b33ae2483cebc54c6.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot;" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot; (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+|  | Loại danh mục |" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+|  | Loại danh mục | (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Loại danh mục | T&igrave;m kiếm mặc định | &quot;&quot; |" width="2400"/>
+                <img src="00a9eed5df9c20da04945365b4f57619e14981241da94309fbc4a407ab19516f.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Loại danh mục | T&igrave;m kiếm mặc định | &quot;&quot; | (completed)" width="2400"/>
+                <img src="00a9eed5df9c20da04945365b4f57619e14981241da94309fbc4a407ab19516f.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Loại danh mục |" width="2400"/>
+                <img src="2a32c027f6de2bd2c1d21be7eb4f2c484d5cb1c1c5bcc273dc09669e5d50e0d5.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Loại danh mục | (completed)" width="2400"/>
+                <img src="2a32c027f6de2bd2c1d21be7eb4f2c484d5cb1c1c5bcc273dc09669e5d50e0d5.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Loại danh mục | &quot;&quot; |  |" width="2400"/>
+                <img src="00a9eed5df9c20da04945365b4f57619e14981241da94309fbc4a407ab19516f.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Loại danh mục | &quot;&quot; |  | (completed)" width="2400"/>
+                <img src="00a9eed5df9c20da04945365b4f57619e14981241da94309fbc4a407ab19516f.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về" width="2400"/>
+                <img src="00a9eed5df9c20da04945365b4f57619e14981241da94309fbc4a407ab19516f.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về (completed)" width="2400"/>
+                <img src="00a9eed5df9c20da04945365b4f57619e14981241da94309fbc4a407ab19516f.png" title=" Example: {field=Loại danh mục, case=T&igrave;m kiếm mặc định, autocomplete=&quot;&quot;, type=} (completed)" width="2400"/>
+                <img src="e970fd7d171d6294a8df3a5acb52e16a349af3f8c5f8ebf3745f379f16cca3b5.png" title=" Example: {field=Loại danh mục, case=T&igrave;m kiếm nhập chuỗi k&yacute; tự c&oacute; space đầu cuối, autocomplete=&quot;Loại tuyển dụng&quot;, type=}" width="2400"/>
+                <img src="e970fd7d171d6294a8df3a5acb52e16a349af3f8c5f8ebf3745f379f16cca3b5.png" title=" Given DangNhap: mở trang Đăng nhập" width="2400"/>
+                <img src="e970fd7d171d6294a8df3a5acb52e16a349af3f8c5f8ebf3745f379f16cca3b5.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; |" width="2400"/>
+                <img src="431443dba8edf968e9760f9abe44d2247a34d1d115fe3528199db9224c62b2cc.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; | (completed)" width="2400"/>
+                <img src="431443dba8edf968e9760f9abe44d2247a34d1d115fe3528199db9224c62b2cc.png" title=" And DangNhap: nhấn button Đăng nhập" width="2400"/>
+                <img src="1b828b4857e37bda040f99af040a4ec854745e0e2410065677ed92d28c930426.png" title=" And DangNhap: nhấn button Đăng nhập (completed)" width="2400"/>
+                <img src="1b828b4857e37bda040f99af040a4ec854745e0e2410065677ed92d28c930426.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị (completed)" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot;" width="2400"/>
+                <img src="a35f0fdc176f2164759c566da821de3bf0cde335af929025f31c370a78b33dfd.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot; (completed)" width="2400"/>
+                <img src="a35f0fdc176f2164759c566da821de3bf0cde335af929025f31c370a78b33dfd.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot;" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot; (completed)" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m" width="2400"/>
+                <img src="4f3df4f097289eba5c1e9477a9406c5aaa145ac18c1a2f1ac308de54092d5aef.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m (completed)" width="2400"/>
+                <img src="4f3df4f097289eba5c1e9477a9406c5aaa145ac18c1a2f1ac308de54092d5aef.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot;" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot; (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+|  | Loại danh mục |" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+|  | Loại danh mục | (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Loại danh mục | T&igrave;m kiếm nhập chuỗi k&yacute; tự c&oacute; space đầu cuối | &quot;Loại tuyển dụng&quot; |" width="2400"/>
+                <img src="644dbef8091ced8f843f650bf4ca73c241326e78836d8f0f7b9627cd71d164c9.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Loại danh mục | T&igrave;m kiếm nhập chuỗi k&yacute; tự c&oacute; space đầu cuối | &quot;Loại tuyển dụng&quot; | (completed)" width="2400"/>
+                <img src="644dbef8091ced8f843f650bf4ca73c241326e78836d8f0f7b9627cd71d164c9.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Loại danh mục |" width="2400"/>
+                <img src="8075f1dfe0218f9b43c57d602f7a352c6012baac731f488836cb5fb020f9eca7.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Loại danh mục | (completed)" width="2400"/>
+                <img src="8075f1dfe0218f9b43c57d602f7a352c6012baac731f488836cb5fb020f9eca7.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Loại danh mục | &quot;Loại tuyển dụng&quot; |  |" width="2400"/>
+                <img src="644dbef8091ced8f843f650bf4ca73c241326e78836d8f0f7b9627cd71d164c9.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Loại danh mục | &quot;Loại tuyển dụng&quot; |  | (completed)" width="2400"/>
+                <img src="644dbef8091ced8f843f650bf4ca73c241326e78836d8f0f7b9627cd71d164c9.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về" width="2400"/>
+                <img src="644dbef8091ced8f843f650bf4ca73c241326e78836d8f0f7b9627cd71d164c9.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về (completed)" width="2400"/>
+                <img src="644dbef8091ced8f843f650bf4ca73c241326e78836d8f0f7b9627cd71d164c9.png" title=" Example: {field=Loại danh mục, case=T&igrave;m kiếm nhập chuỗi k&yacute; tự c&oacute; space đầu cuối, autocomplete=&quot;Loại tuyển dụng&quot;, type=} (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Example: {field=Loại danh mục, case=T&igrave;m kiếm tương đối v&agrave; kh&ocirc;ng ph&acirc;n biệt hoa thường, autocomplete=&quot;TUYỂN DỤNG&quot;, type=}" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Given DangNhap: mở trang Đăng nhập" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; |" width="2400"/>
+                <img src="fb9754b1cd4178371cf98372f71cc9725089ce987d7fdda81a4001fa880cdda9.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; | (completed)" width="2400"/>
+                <img src="fb9754b1cd4178371cf98372f71cc9725089ce987d7fdda81a4001fa880cdda9.png" title=" And DangNhap: nhấn button Đăng nhập" width="2400"/>
+                <img src="c9acb891f0ab4d1ed6682417fd142807e22b88b72f234eb74ec7d7e4282e9b29.png" title=" And DangNhap: nhấn button Đăng nhập (completed)" width="2400"/>
+                <img src="c9acb891f0ab4d1ed6682417fd142807e22b88b72f234eb74ec7d7e4282e9b29.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị (completed)" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot;" width="2400"/>
+                <img src="a35f0fdc176f2164759c566da821de3bf0cde335af929025f31c370a78b33dfd.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot; (completed)" width="2400"/>
+                <img src="a35f0fdc176f2164759c566da821de3bf0cde335af929025f31c370a78b33dfd.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot;" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot; (completed)" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m" width="2400"/>
+                <img src="4f3df4f097289eba5c1e9477a9406c5aaa145ac18c1a2f1ac308de54092d5aef.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m (completed)" width="2400"/>
+                <img src="4f3df4f097289eba5c1e9477a9406c5aaa145ac18c1a2f1ac308de54092d5aef.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot;" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot; (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+|  | Loại danh mục |" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+|  | Loại danh mục | (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Loại danh mục | T&igrave;m kiếm tương đối v&agrave; kh&ocirc;ng ph&acirc;n biệt hoa thường | &quot;TUYỂN DỤNG&quot; |" width="2400"/>
+                <img src="1168aa5d5257e0fde1c7cd19654b6295ce6dfda79c3709fe1cb5f7913dde7ccb.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Loại danh mục | T&igrave;m kiếm tương đối v&agrave; kh&ocirc;ng ph&acirc;n biệt hoa thường | &quot;TUYỂN DỤNG&quot; | (completed)" width="2400"/>
+                <img src="1168aa5d5257e0fde1c7cd19654b6295ce6dfda79c3709fe1cb5f7913dde7ccb.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Loại danh mục |" width="2400"/>
+                <img src="ccee750bf60849e2862d2c539a07beba9feb4b522bc68236a621020fc3192f97.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Loại danh mục | (completed)" width="2400"/>
+                <img src="ccee750bf60849e2862d2c539a07beba9feb4b522bc68236a621020fc3192f97.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Loại danh mục | &quot;TUYỂN DỤNG&quot; |  |" width="2400"/>
+                <img src="1168aa5d5257e0fde1c7cd19654b6295ce6dfda79c3709fe1cb5f7913dde7ccb.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Loại danh mục | &quot;TUYỂN DỤNG&quot; |  | (completed)" width="2400"/>
+                <img src="1168aa5d5257e0fde1c7cd19654b6295ce6dfda79c3709fe1cb5f7913dde7ccb.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về" width="2400"/>
+                <img src="1168aa5d5257e0fde1c7cd19654b6295ce6dfda79c3709fe1cb5f7913dde7ccb.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về (completed)" width="2400"/>
+                <img src="1168aa5d5257e0fde1c7cd19654b6295ce6dfda79c3709fe1cb5f7913dde7ccb.png" title=" Example: {field=Loại danh mục, case=T&igrave;m kiếm tương đối v&agrave; kh&ocirc;ng ph&acirc;n biệt hoa thường, autocomplete=&quot;TUYỂN DỤNG&quot;, type=} (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Example: {field=Loại danh mục, case=T&igrave;m kiếm kh&ocirc;ng ph&acirc;n biệt tiếng việt c&oacute; dấu, kh&ocirc;ng dấu, autocomplete=&quot;Loai tuyen dung&quot;, type=}" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Given DangNhap: mở trang Đăng nhập" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; |" width="2400"/>
+                <img src="81df785bb0790862922e44594c4c5e8771c9fdc79fa2e31f0a39808cac865f17.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; | (completed)" width="2400"/>
+                <img src="81df785bb0790862922e44594c4c5e8771c9fdc79fa2e31f0a39808cac865f17.png" title=" And DangNhap: nhấn button Đăng nhập" width="2400"/>
+                <img src="c9acb891f0ab4d1ed6682417fd142807e22b88b72f234eb74ec7d7e4282e9b29.png" title=" And DangNhap: nhấn button Đăng nhập (completed)" width="2400"/>
+                <img src="c9acb891f0ab4d1ed6682417fd142807e22b88b72f234eb74ec7d7e4282e9b29.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị (completed)" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot;" width="2400"/>
+                <img src="dc09126e0a14f7df6154f0458ef7116e92601fef2b6f915b0feb0e44c566e702.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot; (completed)" width="2400"/>
+                <img src="dc09126e0a14f7df6154f0458ef7116e92601fef2b6f915b0feb0e44c566e702.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot;" width="2400"/>
+                <img src="3dfe697e3a77571b0ffc6a5dac69580492cccd0e0c1f2f6febe06541e123b439.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot; (completed)" width="2400"/>
+                <img src="3dfe697e3a77571b0ffc6a5dac69580492cccd0e0c1f2f6febe06541e123b439.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m" width="2400"/>
+                <img src="d025aa5c73c4be15ee9e513bcf9db9c689d2ceda33867a639619d06dbaabae6c.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m (completed)" width="2400"/>
+                <img src="d025aa5c73c4be15ee9e513bcf9db9c689d2ceda33867a639619d06dbaabae6c.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot;" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot; (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+|  | Loại danh mục |" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+|  | Loại danh mục | (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Loại danh mục | T&igrave;m kiếm kh&ocirc;ng ph&acirc;n biệt tiếng việt c&oacute; dấu, kh&ocirc;ng dấu | &quot;Loai tuyen dung&quot; |" width="2400"/>
+                <img src="0307e1bab8745047b0704a2dc6d2e82c550d244a32ce29812d1edce406f5600f.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Loại danh mục | T&igrave;m kiếm kh&ocirc;ng ph&acirc;n biệt tiếng việt c&oacute; dấu, kh&ocirc;ng dấu | &quot;Loai tuyen dung&quot; | (completed)" width="2400"/>
+                <img src="0307e1bab8745047b0704a2dc6d2e82c550d244a32ce29812d1edce406f5600f.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Loại danh mục |" width="2400"/>
+                <img src="262123ecb672b68144a9253146ec0335e537b7f914e56d3c7a9d9db5a1413094.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Loại danh mục | (completed)" width="2400"/>
+                <img src="262123ecb672b68144a9253146ec0335e537b7f914e56d3c7a9d9db5a1413094.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Loại danh mục | &quot;Loai tuyen dung&quot; |  |" width="2400"/>
+                <img src="0307e1bab8745047b0704a2dc6d2e82c550d244a32ce29812d1edce406f5600f.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Loại danh mục | &quot;Loai tuyen dung&quot; |  | (completed)" width="2400"/>
+                <img src="0307e1bab8745047b0704a2dc6d2e82c550d244a32ce29812d1edce406f5600f.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về" width="2400"/>
+                <img src="0307e1bab8745047b0704a2dc6d2e82c550d244a32ce29812d1edce406f5600f.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về (completed)" width="2400"/>
+                <img src="0307e1bab8745047b0704a2dc6d2e82c550d244a32ce29812d1edce406f5600f.png" title=" Example: {field=Loại danh mục, case=T&igrave;m kiếm kh&ocirc;ng ph&acirc;n biệt tiếng việt c&oacute; dấu, kh&ocirc;ng dấu, autocomplete=&quot;Loai tuyen dung&quot;, type=} (completed)" width="2400"/>
+                <img src="08603ada7e7253804bcbc29fd2fbe799c7b8875e1e58d4b19bd80d89fa215392.png" title=" Example: {field=Danh mục li&ecirc;n quan, case=T&igrave;m kiếm mặc định, autocomplete=&quot;&quot;, type=&quot;Ng&ocirc;n ngữ&quot;}" width="2400"/>
+                <img src="08603ada7e7253804bcbc29fd2fbe799c7b8875e1e58d4b19bd80d89fa215392.png" title=" Given DangNhap: mở trang Đăng nhập" width="2400"/>
+                <img src="08603ada7e7253804bcbc29fd2fbe799c7b8875e1e58d4b19bd80d89fa215392.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; |" width="2400"/>
+                <img src="431443dba8edf968e9760f9abe44d2247a34d1d115fe3528199db9224c62b2cc.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; | (completed)" width="2400"/>
+                <img src="431443dba8edf968e9760f9abe44d2247a34d1d115fe3528199db9224c62b2cc.png" title=" And DangNhap: nhấn button Đăng nhập" width="2400"/>
+                <img src="c9acb891f0ab4d1ed6682417fd142807e22b88b72f234eb74ec7d7e4282e9b29.png" title=" And DangNhap: nhấn button Đăng nhập (completed)" width="2400"/>
+                <img src="c9acb891f0ab4d1ed6682417fd142807e22b88b72f234eb74ec7d7e4282e9b29.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị (completed)" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot;" width="2400"/>
+                <img src="dc09126e0a14f7df6154f0458ef7116e92601fef2b6f915b0feb0e44c566e702.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot; (completed)" width="2400"/>
+                <img src="dc09126e0a14f7df6154f0458ef7116e92601fef2b6f915b0feb0e44c566e702.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot;" width="2400"/>
+                <img src="3dfe697e3a77571b0ffc6a5dac69580492cccd0e0c1f2f6febe06541e123b439.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot; (completed)" width="2400"/>
+                <img src="3dfe697e3a77571b0ffc6a5dac69580492cccd0e0c1f2f6febe06541e123b439.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m" width="2400"/>
+                <img src="72b9b77a96bbc57999d9d2cb0a51bf1e06a2f1b4e80773c32b12434b09b6b12f.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m (completed)" width="2400"/>
+                <img src="72b9b77a96bbc57999d9d2cb0a51bf1e06a2f1b4e80773c32b12434b09b6b12f.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot;" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot; (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+| &quot;Ng&ocirc;n ngữ&quot; | Danh mục li&ecirc;n quan |" width="2400"/>
+                <img src="b282ee525878cb40b587b891262ea0d6440ab373a4f3916ce239b190b500875d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+| &quot;Ng&ocirc;n ngữ&quot; | Danh mục li&ecirc;n quan | (completed)" width="2400"/>
+                <img src="b282ee525878cb40b587b891262ea0d6440ab373a4f3916ce239b190b500875d.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Danh mục li&ecirc;n quan | T&igrave;m kiếm mặc định | &quot;&quot; |" width="2400"/>
+                <img src="bfb8b6a491f6269908b4574040aa062ad846d0b57535496d016a812e3f8ba2ed.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Danh mục li&ecirc;n quan | T&igrave;m kiếm mặc định | &quot;&quot; | (completed)" width="2400"/>
+                <img src="bfb8b6a491f6269908b4574040aa062ad846d0b57535496d016a812e3f8ba2ed.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Danh mục li&ecirc;n quan |" width="2400"/>
+                <img src="e6ff8f13e5442166b56691c98abc5cdf51f192687d09dbaaa0d35917525cbbb6.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Danh mục li&ecirc;n quan | (completed)" width="2400"/>
+                <img src="e6ff8f13e5442166b56691c98abc5cdf51f192687d09dbaaa0d35917525cbbb6.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Danh mục li&ecirc;n quan | &quot;&quot; | &quot;Ng&ocirc;n ngữ&quot; |" width="2400"/>
+                <img src="bfb8b6a491f6269908b4574040aa062ad846d0b57535496d016a812e3f8ba2ed.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Danh mục li&ecirc;n quan | &quot;&quot; | &quot;Ng&ocirc;n ngữ&quot; | (completed)" width="2400"/>
+                <img src="bfb8b6a491f6269908b4574040aa062ad846d0b57535496d016a812e3f8ba2ed.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về" width="2400"/>
+                <img src="bfb8b6a491f6269908b4574040aa062ad846d0b57535496d016a812e3f8ba2ed.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về (completed)" width="2400"/>
+                <img src="bfb8b6a491f6269908b4574040aa062ad846d0b57535496d016a812e3f8ba2ed.png" title=" Example: {field=Danh mục li&ecirc;n quan, case=T&igrave;m kiếm mặc định, autocomplete=&quot;&quot;, type=&quot;Ng&ocirc;n ngữ&quot;} (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Example: {field=Danh mục li&ecirc;n quan, case=T&igrave;m kiếm kh&ocirc;ng ra kết quả, autocomplete=&quot;@#$&quot;, type=&quot;Ng&ocirc;n ngữ&quot;}" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Given DangNhap: mở trang Đăng nhập" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; |" width="2400"/>
+                <img src="81df785bb0790862922e44594c4c5e8771c9fdc79fa2e31f0a39808cac865f17.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; | (completed)" width="2400"/>
+                <img src="81df785bb0790862922e44594c4c5e8771c9fdc79fa2e31f0a39808cac865f17.png" title=" And DangNhap: nhấn button Đăng nhập" width="2400"/>
+                <img src="ba35e62a7473f5397d858c740fdfd7388ee89ec4f6bd8739c10f6e2561a1ae0c.png" title=" And DangNhap: nhấn button Đăng nhập (completed)" width="2400"/>
+                <img src="ba35e62a7473f5397d858c740fdfd7388ee89ec4f6bd8739c10f6e2561a1ae0c.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị (completed)" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot;" width="2400"/>
+                <img src="a35f0fdc176f2164759c566da821de3bf0cde335af929025f31c370a78b33dfd.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot; (completed)" width="2400"/>
+                <img src="a35f0fdc176f2164759c566da821de3bf0cde335af929025f31c370a78b33dfd.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot;" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot; (completed)" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m" width="2400"/>
+                <img src="dd42fc5993f503c3aba3565af970fdaf4223dca82546336f3394cf2d960dc2bb.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m (completed)" width="2400"/>
+                <img src="dd42fc5993f503c3aba3565af970fdaf4223dca82546336f3394cf2d960dc2bb.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot;" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot; (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+| &quot;Ng&ocirc;n ngữ&quot; | Danh mục li&ecirc;n quan |" width="2400"/>
+                <img src="b282ee525878cb40b587b891262ea0d6440ab373a4f3916ce239b190b500875d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+| &quot;Ng&ocirc;n ngữ&quot; | Danh mục li&ecirc;n quan | (completed)" width="2400"/>
+                <img src="b282ee525878cb40b587b891262ea0d6440ab373a4f3916ce239b190b500875d.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Danh mục li&ecirc;n quan | T&igrave;m kiếm kh&ocirc;ng ra kết quả | &quot;@#$&quot; |" width="2400"/>
+                <img src="8e11d461648c5b99e8e75b4de360e78cda990b18ea1ada79711a8665771fd03f.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Danh mục li&ecirc;n quan | T&igrave;m kiếm kh&ocirc;ng ra kết quả | &quot;@#$&quot; | (completed)" width="2400"/>
+                <img src="8e11d461648c5b99e8e75b4de360e78cda990b18ea1ada79711a8665771fd03f.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Danh mục li&ecirc;n quan |" width="2400"/>
+                <img src="5fae0479e731e9de25dec4c5ca5fdcb92edc4c8d5da6a55f253ecf0264ed4ae2.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Danh mục li&ecirc;n quan | (completed)" width="2400"/>
+                <img src="5fae0479e731e9de25dec4c5ca5fdcb92edc4c8d5da6a55f253ecf0264ed4ae2.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Danh mục li&ecirc;n quan | &quot;@#$&quot; | &quot;Ng&ocirc;n ngữ&quot; |" width="2400"/>
+                <img src="8e11d461648c5b99e8e75b4de360e78cda990b18ea1ada79711a8665771fd03f.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Danh mục li&ecirc;n quan | &quot;@#$&quot; | &quot;Ng&ocirc;n ngữ&quot; | (completed)" width="2400"/>
+                <img src="8e11d461648c5b99e8e75b4de360e78cda990b18ea1ada79711a8665771fd03f.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về" width="2400"/>
+                <img src="8e11d461648c5b99e8e75b4de360e78cda990b18ea1ada79711a8665771fd03f.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về (completed)" width="2400"/>
+                <img src="8e11d461648c5b99e8e75b4de360e78cda990b18ea1ada79711a8665771fd03f.png" title=" Example: {field=Danh mục li&ecirc;n quan, case=T&igrave;m kiếm kh&ocirc;ng ra kết quả, autocomplete=&quot;@#$&quot;, type=&quot;Ng&ocirc;n ngữ&quot;} (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Example: {field=Danh mục li&ecirc;n quan, case=T&igrave;m kiếm nhập chuỗi k&yacute; tự c&oacute; space đầu cuối, autocomplete=&quot; Tiếng Ph&aacute;p &quot;, type=&quot;Ng&ocirc;n ngữ&quot;}" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Given DangNhap: mở trang Đăng nhập" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; |" width="2400"/>
+                <img src="81df785bb0790862922e44594c4c5e8771c9fdc79fa2e31f0a39808cac865f17.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; | (completed)" width="2400"/>
+                <img src="81df785bb0790862922e44594c4c5e8771c9fdc79fa2e31f0a39808cac865f17.png" title=" And DangNhap: nhấn button Đăng nhập" width="2400"/>
+                <img src="cb9e3a99a6367830a3cad1b0f4b50379fbcaea86e4c480322cfee653bbf139ff.png" title=" And DangNhap: nhấn button Đăng nhập (completed)" width="2400"/>
+                <img src="cb9e3a99a6367830a3cad1b0f4b50379fbcaea86e4c480322cfee653bbf139ff.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị (completed)" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot;" width="2400"/>
+                <img src="d866b0e4ed5d8be7afe0491dd289c2c4e06bb0be86dc53b5989bdd1400e1b52f.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot; (completed)" width="2400"/>
+                <img src="d866b0e4ed5d8be7afe0491dd289c2c4e06bb0be86dc53b5989bdd1400e1b52f.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot;" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot; (completed)" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m" width="2400"/>
+                <img src="4f3df4f097289eba5c1e9477a9406c5aaa145ac18c1a2f1ac308de54092d5aef.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m (completed)" width="2400"/>
+                <img src="4f3df4f097289eba5c1e9477a9406c5aaa145ac18c1a2f1ac308de54092d5aef.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot;" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot; (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+| &quot;Ng&ocirc;n ngữ&quot; | Danh mục li&ecirc;n quan |" width="2400"/>
+                <img src="b282ee525878cb40b587b891262ea0d6440ab373a4f3916ce239b190b500875d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+| &quot;Ng&ocirc;n ngữ&quot; | Danh mục li&ecirc;n quan | (completed)" width="2400"/>
+                <img src="b282ee525878cb40b587b891262ea0d6440ab373a4f3916ce239b190b500875d.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Danh mục li&ecirc;n quan | T&igrave;m kiếm nhập chuỗi k&yacute; tự c&oacute; space đầu cuối | &quot; Tiếng Ph&aacute;p &quot; |" width="2400"/>
+                <img src="914aa47903a363dd1cc33e2ec9b12ffaed641cb1fff32930ac11e163fc8dedda.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Danh mục li&ecirc;n quan | T&igrave;m kiếm nhập chuỗi k&yacute; tự c&oacute; space đầu cuối | &quot; Tiếng Ph&aacute;p &quot; | (completed)" width="2400"/>
+                <img src="914aa47903a363dd1cc33e2ec9b12ffaed641cb1fff32930ac11e163fc8dedda.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Danh mục li&ecirc;n quan |" width="2400"/>
+                <img src="6f458cc37f52f5853edb2c9ca2dbe30a69f6a7bdad1be1b8101ed4490ea31fcf.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Danh mục li&ecirc;n quan | (completed)" width="2400"/>
+                <img src="6f458cc37f52f5853edb2c9ca2dbe30a69f6a7bdad1be1b8101ed4490ea31fcf.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Danh mục li&ecirc;n quan | &quot; Tiếng Ph&aacute;p &quot; | &quot;Ng&ocirc;n ngữ&quot; |" width="2400"/>
+                <img src="914aa47903a363dd1cc33e2ec9b12ffaed641cb1fff32930ac11e163fc8dedda.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Danh mục li&ecirc;n quan | &quot; Tiếng Ph&aacute;p &quot; | &quot;Ng&ocirc;n ngữ&quot; | (completed)" width="2400"/>
+                <img src="914aa47903a363dd1cc33e2ec9b12ffaed641cb1fff32930ac11e163fc8dedda.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về" width="2400"/>
+                <img src="914aa47903a363dd1cc33e2ec9b12ffaed641cb1fff32930ac11e163fc8dedda.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Example: {field=Danh mục li&ecirc;n quan, case=T&igrave;m kiếm tương đối v&agrave; kh&ocirc;ng ph&acirc;n biệt hoa thường, autocomplete=&quot;PH&Aacute;P&quot;, type=&quot;Ng&ocirc;n ngữ&quot;}" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Given DangNhap: mở trang Đăng nhập" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; |" width="2400"/>
+                <img src="431443dba8edf968e9760f9abe44d2247a34d1d115fe3528199db9224c62b2cc.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; | (completed)" width="2400"/>
+                <img src="431443dba8edf968e9760f9abe44d2247a34d1d115fe3528199db9224c62b2cc.png" title=" And DangNhap: nhấn button Đăng nhập" width="2400"/>
+                <img src="c9acb891f0ab4d1ed6682417fd142807e22b88b72f234eb74ec7d7e4282e9b29.png" title=" And DangNhap: nhấn button Đăng nhập (completed)" width="2400"/>
+                <img src="c9acb891f0ab4d1ed6682417fd142807e22b88b72f234eb74ec7d7e4282e9b29.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị (completed)" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot;" width="2400"/>
+                <img src="a35f0fdc176f2164759c566da821de3bf0cde335af929025f31c370a78b33dfd.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot; (completed)" width="2400"/>
+                <img src="a35f0fdc176f2164759c566da821de3bf0cde335af929025f31c370a78b33dfd.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot;" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot; (completed)" width="2400"/>
+                <img src="8467ea779cccbd94a42ec25edaf265f26cac0b73e7d8d0387943d573c376d15a.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m" width="2400"/>
+                <img src="c52df790723d3384828f537612519b79868fa2ee8a16b6a75b1abf7958b1555e.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m (completed)" width="2400"/>
+                <img src="c52df790723d3384828f537612519b79868fa2ee8a16b6a75b1abf7958b1555e.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot;" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot; (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+| &quot;Ng&ocirc;n ngữ&quot; | Danh mục li&ecirc;n quan |" width="2400"/>
+                <img src="b282ee525878cb40b587b891262ea0d6440ab373a4f3916ce239b190b500875d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+| &quot;Ng&ocirc;n ngữ&quot; | Danh mục li&ecirc;n quan | (completed)" width="2400"/>
+                <img src="b282ee525878cb40b587b891262ea0d6440ab373a4f3916ce239b190b500875d.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Danh mục li&ecirc;n quan | T&igrave;m kiếm tương đối v&agrave; kh&ocirc;ng ph&acirc;n biệt hoa thường | &quot;PH&Aacute;P&quot; |" width="2400"/>
+                <img src="295aa3874663a0033db7244d6bbcfe1596603b3cb62485514974acc2085a2c3e.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Danh mục li&ecirc;n quan | T&igrave;m kiếm tương đối v&agrave; kh&ocirc;ng ph&acirc;n biệt hoa thường | &quot;PH&Aacute;P&quot; | (completed)" width="2400"/>
+                <img src="295aa3874663a0033db7244d6bbcfe1596603b3cb62485514974acc2085a2c3e.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Danh mục li&ecirc;n quan |" width="2400"/>
+                <img src="895fcc923fb5b89cb38e1d6a421a60eb630e01fa0043f21cee38faede5f411b3.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Danh mục li&ecirc;n quan | (completed)" width="2400"/>
+                <img src="895fcc923fb5b89cb38e1d6a421a60eb630e01fa0043f21cee38faede5f411b3.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Danh mục li&ecirc;n quan | &quot;PH&Aacute;P&quot; | &quot;Ng&ocirc;n ngữ&quot; |" width="2400"/>
+                <img src="295aa3874663a0033db7244d6bbcfe1596603b3cb62485514974acc2085a2c3e.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Danh mục li&ecirc;n quan | &quot;PH&Aacute;P&quot; | &quot;Ng&ocirc;n ngữ&quot; | (completed)" width="2400"/>
+                <img src="295aa3874663a0033db7244d6bbcfe1596603b3cb62485514974acc2085a2c3e.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về" width="2400"/>
+                <img src="295aa3874663a0033db7244d6bbcfe1596603b3cb62485514974acc2085a2c3e.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về (completed)" width="2400"/>
+                <img src="295aa3874663a0033db7244d6bbcfe1596603b3cb62485514974acc2085a2c3e.png" title=" Example: {field=Danh mục li&ecirc;n quan, case=T&igrave;m kiếm tương đối v&agrave; kh&ocirc;ng ph&acirc;n biệt hoa thường, autocomplete=&quot;PH&Aacute;P&quot;, type=&quot;Ng&ocirc;n ngữ&quot;} (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Example: {field=Danh mục li&ecirc;n quan, case=T&igrave;m kiếm kh&ocirc;ng ph&acirc;n biệt tiếng việt c&oacute; dấu, kh&ocirc;ng dấu, autocomplete=&quot;Tieng Phap&quot;, type=&quot;Ng&ocirc;n ngữ&quot;}" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Given DangNhap: mở trang Đăng nhập" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" Then DangNhap: kiểm tra trang Đăng nhập mở th&agrave;nh c&ocirc;ng với button Login được hiển thị (completed)" width="2400"/>
+                <img src="f6014631949799380d7c40ed4b0316cac44a6b713dc6829deccaafcb4a17f718.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; |" width="2400"/>
+                <img src="81df785bb0790862922e44594c4c5e8771c9fdc79fa2e31f0a39808cac865f17.png" title=" And DangNhap: nhập dữ liệu v&agrave;o c&aacute;c trường với dữ liệu
+| Code/Email | Password |
+| &quot;274018&quot; | &quot;123456a@&quot; | (completed)" width="2400"/>
+                <img src="81df785bb0790862922e44594c4c5e8771c9fdc79fa2e31f0a39808cac865f17.png" title=" And DangNhap: nhấn button Đăng nhập" width="2400"/>
+                <img src="eb3f837a56809d02fd451235e8497dbdd4f78ed167c865afc6220b32f20f56b0.png" title=" And DangNhap: nhấn button Đăng nhập (completed)" width="2400"/>
+                <img src="eb3f837a56809d02fd451235e8497dbdd4f78ed167c865afc6220b32f20f56b0.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" Then TrangChu: kiểm tra login th&agrave;nh c&ocirc;ng với acc &quot;Đỗ Văn Đ&ocirc;&quot; được hiển thị (completed)" width="2400"/>
+                <img src="9042dff393d1839cdddeb6f48b76a41977e20416ca62b59486293a6f1c0c680e.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot;" width="2400"/>
+                <img src="fb3c2d8f76915a9d3bfc6f6ac12d75f020d3e2b15ae4aeadf76ba7ec8ced5031.png" title=" When TrangChu: nhấn menu icon &quot;Quản l&yacute; cấu h&igrave;nh danh mục li&ecirc;n quan&quot; (completed)" width="2400"/>
+                <img src="fb3c2d8f76915a9d3bfc6f6ac12d75f020d3e2b15ae4aeadf76ba7ec8ced5031.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot;" width="2400"/>
+                <img src="3dfe697e3a77571b0ffc6a5dac69580492cccd0e0c1f2f6febe06541e123b439.png" title=" Then QLCauHinhDanhMuc-TimKiem: kiểm tra mở trang T&igrave;m kiếm cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;DANH S&Aacute;CH CẤU H&Igrave;NH DANH MỤC LI&Ecirc;N QUAN&quot; (completed)" width="2400"/>
+                <img src="3dfe697e3a77571b0ffc6a5dac69580492cccd0e0c1f2f6febe06541e123b439.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m" width="2400"/>
+                <img src="4f3df4f097289eba5c1e9477a9406c5aaa145ac18c1a2f1ac308de54092d5aef.png" title=" When QLCauHinhDanhMuc-T&igrave;mKiem: nhấn button Th&ecirc;m (completed)" width="2400"/>
+                <img src="4f3df4f097289eba5c1e9477a9406c5aaa145ac18c1a2f1ac308de54092d5aef.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot;" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra mở trang Th&ecirc;m cấu h&igrave;nh th&agrave;nh c&ocirc;ng với title &quot;TH&Ecirc;M MỚI CẤU H&Igrave;NH&quot; (completed)" width="2400"/>
+                <img src="a8ad44d78eaa3951dd25f84669683e2b53558efd2ebfe5549a3e5e266814994d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+| &quot;Ng&ocirc;n ngữ&quot; | Danh mục li&ecirc;n quan |" width="2400"/>
+                <img src="b282ee525878cb40b587b891262ea0d6440ab373a4f3916ce239b190b500875d.png" title=" Given QLCauHinhDanhMuc-Them: nhập dữ liệu trường Loại danh mục l&agrave; tiền điều kiện nếu field l&agrave; Danh mục li&ecirc;n quan
+| Type | Field |
+| &quot;Ng&ocirc;n ngữ&quot; | Danh mục li&ecirc;n quan | (completed)" width="2400"/>
+                <img src="b282ee525878cb40b587b891262ea0d6440ab373a4f3916ce239b190b500875d.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Danh mục li&ecirc;n quan | T&igrave;m kiếm kh&ocirc;ng ph&acirc;n biệt tiếng việt c&oacute; dấu, kh&ocirc;ng dấu | &quot;Tieng Phap&quot; |" width="2400"/>
+                <img src="2d8da8164878d295aa73de525fe16ddea052ca0374868baad0136409c420bdad.png" title=" And QLCauHinhDanhMuc-Them: nhập autocomplete với dữ liệu
+| Field | Case | Autocomplete |
+| Danh mục li&ecirc;n quan | T&igrave;m kiếm kh&ocirc;ng ph&acirc;n biệt tiếng việt c&oacute; dấu, kh&ocirc;ng dấu | &quot;Tieng Phap&quot; | (completed)" width="2400"/>
+                <img src="2d8da8164878d295aa73de525fe16ddea052ca0374868baad0136409c420bdad.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Danh mục li&ecirc;n quan |" width="2400"/>
+                <img src="61d9e562fb4c2f86dde376f1bd98b55759e8d4826678fbbbaf5850c89aa9ba7d.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về
+| Field |
+| Danh mục li&ecirc;n quan | (completed)" width="2400"/>
+                <img src="61d9e562fb4c2f86dde376f1bd98b55759e8d4826678fbbbaf5850c89aa9ba7d.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Danh mục li&ecirc;n quan | &quot;Tieng Phap&quot; | &quot;Ng&ocirc;n ngữ&quot; |" width="2400"/>
+                <img src="2d8da8164878d295aa73de525fe16ddea052ca0374868baad0136409c420bdad.png" title=" And QLCauHinhDanhMuc-Them: lấy danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về
+| Field | Autocomplete | Type |
+| Danh mục li&ecirc;n quan | &quot;Tieng Phap&quot; | &quot;Ng&ocirc;n ngữ&quot; | (completed)" width="2400"/>
+                <img src="2d8da8164878d295aa73de525fe16ddea052ca0374868baad0136409c420bdad.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về" width="2400"/>
+                <img src="2d8da8164878d295aa73de525fe16ddea052ca0374868baad0136409c420bdad.png" title=" Then QLCauHinhDanhMuc-Them: kiểm tra danh s&aacute;ch kết quả t&igrave;m kiếm tr&ecirc;n UI trả về bằng danh s&aacute;ch kết quả t&igrave;m kiếm DB trả về (completed)" width="2400"/>
+                <img src="2d8da8164878d295aa73de525fe16ddea052ca0374868baad0136409c420bdad.png" title=" Example: {field=Danh mục li&ecirc;n quan, case=T&igrave;m kiếm kh&ocirc;ng ph&acirc;n biệt tiếng việt c&oacute; dấu, kh&ocirc;ng dấu, autocomplete=&quot;Tieng Phap&quot;, type=&quot;Ng&ocirc;n ngữ&quot;} (completed): <span class='failing-color'>FAILURE</span>" width="2400"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.5</span>
+</div>
+</body>
+</html>

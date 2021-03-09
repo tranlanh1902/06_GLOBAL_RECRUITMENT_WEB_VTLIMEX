@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Sửa cấu hinh danh mục liên quan" skipped="0" tests="21" time="2844.21" timestamp="2021-02-26 10:24:26"><testcase name="01_[QL Cấu hình danh mục - Sửa] Kiểm tra Sửa cấu hình thành công"/><testcase name="02_[QL Cấu hình danh mục - Sửa] Kiểm tra Sửa cấu hình không thành công"/><testcase name="03_[QL Cấu hình danh mục - Sửa] Kiểm tra chức năng autocomplete thành công"><failure type="java.lang.AssertionError"/><system-err>null
+globalRecruitment.StepDefinitions.F_04_ConfigCategory_Edit_PageDefinitions.qlcauhinhdanhmucsua_danh_sch_kt_qu_tm_kim_trn_ui_tr_v_bng_danh_sch_kt_qu_tm_kim_db_tr_v(F_04_ConfigCategory_Edit_PageDefinitions.java:263)
+✽.QLCauHinhDanhMuc-Sua: kiểm tra danh sách kết quả tìm kiếm trên UI trả về bằng danh sách kết quả tìm kiếm DB trả về(file:src/test/java/globalRecruitment/Features/03_ConfigCategory_Edit.feature:78)
+</system-err></testcase></testsuite>

@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Đăng nhập","01_[Đăng nhập] Đăng nhập thành công","SUCCESS","2021-02-26T10:04:30.002+07:00[Asia/Ho_Chi_Minh]","0.0","24.03"
+"Đăng nhập","02_[Đăng nhập] Đăng nhập không thành công","SUCCESS","2021-02-26T10:04:54.035+07:00[Asia/Ho_Chi_Minh]","0.0","37.32"

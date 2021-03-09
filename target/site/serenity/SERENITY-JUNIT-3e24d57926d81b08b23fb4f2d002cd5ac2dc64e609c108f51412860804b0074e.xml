@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Tìm kiếm danh mục cấu hình liên quan" skipped="0" tests="21" time="1692.03" timestamp="2021-02-26 11:13:26"><testcase name="01_[QL Cấu hình danh mục - Tìm kiếm] Kiểm tra tìm kiếm thành công"/><testcase name="02_[QL Cấu hình danh mục - Tìm kiếm] Kiểm tra autocomplete thành công"><failure type="java.lang.AssertionError"/><system-err>null
+globalRecruitment.StepDefinitions.F_02_ConfigCategory_Search_PageDefinitions.qlcauhinhdanhmuctimkiem_kim_tra_danh_sch_kt_qu_tm_kim_trn_ui_tr_v_bng_danh_sch_kt_qu_tm_kim_db_tr_v(F_02_ConfigCategory_Search_PageDefinitions.java:255)
+✽.QLCauHinhDanhMuc-TimKiem: kiểm tra danh sách kết quả tìm kiếm trên UI trả về bằng danh sách kết quả tìm kiếm DB trả về(file:src/test/java/globalRecruitment/Features/05_ConfigCategory_Search.feature:58)
+</system-err></testcase></testsuite>

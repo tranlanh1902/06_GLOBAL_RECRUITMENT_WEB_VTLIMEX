@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Thêm cấu hình danh mục liên quan","03_[QL Cấu hình danh mục - Thêm] Kiểm tra chức năng autocomplete thành công","FAILURE","2021-02-26T10:14:22.169+07:00[Asia/Ho_Chi_Minh]","0.0","604.56"
+"Sửa cấu hinh danh mục liên quan","03_[QL Cấu hình danh mục - Sửa] Kiểm tra chức năng autocomplete thành công","FAILURE","2021-02-26T10:46:11.564+07:00[Asia/Ho_Chi_Minh]","0.0","1539.38"
+"Tìm kiếm danh mục cấu hình liên quan","02_[QL Cấu hình danh mục - Tìm kiếm] Kiểm tra autocomplete thành công","FAILURE","2021-02-26T11:32:41.128+07:00[Asia/Ho_Chi_Minh]","0.0","537.89"

@@ -1,0 +1,1181 @@
+<html lang="vi"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/VRS/share/color/img/shield-secure.ico" type="image/ico">
+    
+    <title>Quản lý cấu hình danh mục liên quan</title>
+    <link rel="apple-touch-icon" href="/VRS/share/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/VRS/share/images/favicon.ico">
+    <!-- home -->
+    <link rel="stylesheet" href="/VRS/share/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/VRS/share/js/ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/VRS/share/css/main.css">
+    <link rel="stylesheet" href="/VRS/share/css/style.min.css">
+    <link rel="stylesheet" href="/VRS/share/js/ui/ui-lightness/custom-widget.css">
+    <link rel="stylesheet" href="/VRS/share/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/VRS/share/css/glyphicons/glyphicons.css">
+    <link rel="stylesheet" href="/VRS/share/dashboard/css/roboto.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/VRS/share/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/VRS/share/css/bootstrap/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="/VRS/share/css/site.min.css">
+    <!-- duong vd5-->
+    <link rel="stylesheet" href="/VRS/share/css/select2-bootstrap.css">
+    <link rel="stylesheet" href="/VRS/share/css/select2.min.css">
+    <script type="text/javascript" src="/VRS/share/js/moment.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/VRS/share/css/daterangepicker.css">
+    <!-- duong vd5 end-->
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="/VRS/share/js/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/flag-icon-css/flag-icon.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/chartist/chartist.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="/VRS/share/css/v1.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/toastr/toastr.css">
+
+    <link rel="stylesheet" href="/VRS/share/js/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/jquery-selective/jquery-selective.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/bootstrap-markdown/bootstrap-markdown.css">
+    <link rel="stylesheet" href="/VRS/share/js/vendor/apps/taskboard.css">
+    <link rel="stylesheet" type="text/css" href="/VRS/share/css/chosen.v1.0.0.css">
+    <link rel="stylesheet" type="text/css" href="/VRS/share/css/extendsColor-4.css">
+    <!-- Fonts -->
+        <link rel="stylesheet" href="/VRS/share/css/weather-icons.css">
+    <link rel="stylesheet" href="/VRS/share/css/web-icons.min.css">
+    <link rel="stylesheet" href="/VRS/share/css/brand-icons.min.css">
+    <link rel="stylesheet" href="/VRS/share/css/layout.css">
+    <link rel="stylesheet" href="/VRS/share/dynaTree/skin/ui.dynatree.css">
+    <link rel="stylesheet" type="text/css" href="/VRS/share/js/inlineValidation/css/validationEngine.jquery.css">
+
+    <!-- Scripts -->
+    <script src="/VRS/share/js/vendor/jquery/jquery.js"></script>
+    <script src="/VRS/share/js/vendor/breakpoints/breakpoints.js"></script>
+     <!-- duong vd5-->
+    <script src="/VRS/share/js/select2.full.js"></script>
+    <script src="/VRS/share/js/popper.min.js"></script>
+    <script src="/VRS/share/js/html2canvas.min.js"></script>
+    <script src="/VRS/share/js/html2canvas.js"></script>
+    <script type="text/javascript" src="/VRS/share/js/daterangepicker.js"></script>
+	    <!-- duong vd5 end-->
+    
+
+    <script src="/VRS/share/js/chart/highstock.js"></script>
+    <script src="/VRS/share/js/chart/exporting.js"></script>
+    <script src="/VRS/share/js/chart/export-data.js"></script>
+    <script src="/VRS/share/js/chart/accessibility.js"></script>
+    
+    
+
+<script type="text/javascript">
+function updateSuccess(msg) {
+    $(function() {
+        if (msg) {
+            toastr["success"](msg);
+        } else {
+            toastr["success"]('global.success');
+        }
+    })
+}
+function updateError(msg) {
+    $(function() {
+        if (msg) {
+            toastr["error"](msg);
+        } else {
+            toastr["error"]('global.error');
+        }
+    })
+}
+function warningMessage(msg) {
+    $(function() {
+        toastr["warning"](msg);
+    })
+}
+function processReturnMessage(returnCode, msg, callback, extraValue) {
+    try {
+        if (returnCode == 0 && msg != '') {
+            if (msg) {
+                updateSuccess(msg);
+            } else {
+                updateSuccess();
+            }
+        } else if (returnCode == 1 && msg != '') {
+            if (msg) {
+                updateError(msg);
+            } else {
+                updateError();
+            }
+        } else if (returnCode == 2 && msg != '') {
+            if (msg) {
+                warningMessage(msg);
+            }
+        }
+        if (callback != null && callback != '') {
+            setTimeout(function() {
+                eval(callback + '(returnCode,extraValue,msg)');
+            }, 50)
+        }
+    } catch (ex) {
+        alert(ex.message);
+    }
+}
+function scrollTop() {
+    $("html, body").animate({ scrollTop: 0 }, 400);
+}
+$(document).ready(function(){
+    /*style and control input file*/
+    $("html").on("keyup", ".file-control", function(e){
+       var code = e.which;
+       if(code == 13) {
+           return $(this).find('input[type="file"]').trigger('click');;
+       }
+    });
+    $("html").on("change", ".file-control > input[type='file']", function(e) {
+         var $this = $(this);
+         if (this.files && this.files[0]) {
+            $this.parents('.file-control').addClass('hasFile').find('.file-text').html(this.files[0].name);
+            $(this).prop('title',this.files[0].name);
+            $this.parents('.file-control').addClass('hasFile').find('.btn-delete-file').attr("title", 'Xóa file');
+         } else {
+            $this.parents('.file-control').removeClass('hasFile').find('.file-text').html('Chưa có file được chọn');
+            $(this).prop('title','Chưa có file được chọn');
+         }
+    })
+    $("html").on("click", ".file-control > .btn-delete-file", function(e) {
+         return $(this).parents('.file-control').find('input[type="file"]').val(null).trigger('change');
+    })
+    $.fn.inputFileControl = function() {
+        return $(this).width('auto').wrap($('<span class="file-control v-from " href="javascript:;" style="height:30px"/>')).parent()
+                        .append($('<div class="file-container" style="cursor: pointer"/>')
+                        .append('<span class="file-text">Chưa có file được chọn</span>')
+                        .append('<span class="file-button btn-chose-file" style="width:70px">Chọn file</span>'))
+                        .append('<span class="btn-delete-file glyphicons glyphicons-minus-sign" title="Xóa file"></span>')
+                        .find('input[type="file"]').trigger('change');
+    };
+
+    $.fn.removeMandatoryNote = function() {
+        return $(this).parent().prev().filter('label').find('font[color="red"]').remove();
+    }
+    $.fn.inputReplaceTitle2PlaceHolder = function() {
+        $(this).each(function(i, el) {
+            if($(el).attr('title')) {
+                $(el).attr("placeholder", $(el).attr('title'));
+            }
+        })
+    }
+})
+</script>
+    <script src="/VRS/share/js/cleave.min.js"></script>
+    <script src="/VRS/share/js/main.js"></script>
+    <script>
+      Breakpoints();
+    </script>
+    <style>
+		.page{
+			max-width: none !important;
+            min-height: calc(100% - 47px);
+		}
+    </style>
+<style>.cke{visibility:hidden;}</style></head>
+
+<body class="animsition dashboard" style="animation-duration: 800ms; opacity: 1;">
+    
+     <script type="text/javascript">
+
+        var mapPermission = {};
+        function extractPermission() {
+            
+                
+                var key = 'APPROVAL RECRUITMENT_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'APPROVAL RECRUITMENT_TIMELINE_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'DECIDE MEMBER_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'DELETE CATEGORY_TYPE_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'DELETE CATEGORY_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'DELETE MEMBER_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'DELETE PAGE_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'DELETE RECRUITMENT_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'DELETE RECRUITMENT_ORGANIZATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'DELETE RECRUITMENT_TIMELINE_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'DELETE SUGGEST_INPUT_TYPE_VSR_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'DELETE SUGGEST_INPUT_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'EXPORT RECRUITMENT_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'EXPORT RECRUITMENT_TIMELINE_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'IMPORT MEMBER_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'IMPORT RECRUITMENT_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'IMPORT RECRUITMENT_TIMELINE_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'INSERT CATEGORY_TYPE_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'INSERT CATEGORY_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'INSERT MEMBER_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'INSERT PAGE_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'INSERT RECRUITMENT_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'INSERT RECRUITMENT_ORGANIZATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'INSERT RECRUITMENT_TIMELINE_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'INSERT SUGGEST_INPUT_TYPE_VSR_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'INSERT SUGGEST_INPUT_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'PUSH_VHR RECRUITMENT_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'UPDATE CATEGORY_TYPE_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'UPDATE CATEGORY_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'UPDATE MEMBER_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'UPDATE PAGE_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'UPDATE RECRUITMENT_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'UPDATE RECRUITMENT_ORGANIZATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'UPDATE RECRUITMENT_TIMELINE_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'UPDATE SUGGEST_INPUT_TYPE_VSR_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'UPDATE SUGGEST_INPUT_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'VIEW CATEGORY_TYPE_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'VIEW CATEGORY_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'VIEW MEMBER_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'VIEW PAGE_VRS_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'VIEW RECRUITMENT_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'VIEW RECRUITMENT_ORGANIZATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'VIEW RECRUITMENT_TIMELINE_INFOMATION'
+                    mapPermission[key] = 1;
+                
+                var key = 'VIEW SUGGEST_INPUT_TYPE_VSR_V2'
+                    mapPermission[key] = 1;
+                
+                var key = 'VIEW SUGGEST_INPUT_VRS_V2'
+                    mapPermission[key] = 1;
+                
+            
+        }
+
+        extractPermission();
+    </script>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+
+
+<c:set var="contextPath" value="/VRS/">
+
+<style>
+	li>a{
+		color: #76838f !important;
+	}
+
+	.animsition-link{
+		height: 30px;
+	}
+</style>
+
+<nav class="site-navbar navbar navbar-default navbar-inverse navbar-fixed-top navbar-mega active" role="navigation" id="navbar">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided" data-toggle="menubar">
+            <span class="sr-only">Toggle navigation</span> <span class="hamburger-bar"></span>
+        </button>
+        <!-- <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+            <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+        </button> -->
+        <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+            <img class="navbar-brand-logo" src="/VRS/share/center/assets/images/logo.png" title="Remark">
+        </div>
+    </div>
+
+    <div class="navbar-container container-fluid">
+        <!-- Navbar Collapse -->
+        <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+            <!-- Navbar Toolbar -->
+            <ul class="nav navbar-toolbar">
+                <li class="nav-item hidden-float" id="toggleMenubar">
+                    <a class="nav-link" data-toggle="menubar" role="button">
+                        <i class="icon hamburger hamburger-arrow-left">
+                            <span class="sr-only">Toggle menubar</span>
+                            <span class="hamburger-bar"></span>
+                        </i>
+                    </a>
+                </li>
+            </ul>
+            <!-- End Navbar Toolbar -->
+
+            <!-- Navbar Toolbar Right -->
+             <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link navbar-avatar" data-toggle="dropdown" href="" aria-expanded="false" data-animation="scale-up" role="button">
+                        <span class="avatar avatar-lg"> <img src="/VRS/share/images/avatar.jpg" alt="..."></span>
+                        <h5 class="site-menubar-user" style="float: right; color: white; margin: 7px;">Đỗ Văn Đô</h5>
+                    </a>
+                   
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</nav>
+
+
+<div class="left-sidebar-pro">
+	<nav id="sidebar" class="active">
+		<div class="sidebar-header" style="padding: 10px;">
+			<a href="/VRS/dashboard" style="display: flex; flex-direction: row; align-items: center;">
+				<img class="main-logo" src="/VRS/share/images/logo2.png" alt="" title="VIETTEL TUYỂN DỤNG">
+				<label style="margin-bottom: 0; margin-left: 10px; white-space: nowrap;font-weight: bold;">VIETTEL TUYỂN DỤNG</label>
+			</a> 
+			<strong><a href="/VRS/dashboard"><img src="/VRS/share/images/logo2.png" alt="" style="max-width: 100%;height: auto;" title="VIETTEL TUYỂN DỤNG"></a></strong>
+		</div>
+		<div class="left-custom-menu-adp-wrap comment-scrollbar mCustomScrollbar _mCS_1 mCS-autoHide" style="position: relative; margin-top: 10px;">
+			<div>
+                <ul class="site-menu" data-plugin="menu" style="padding: 0;">
+                	<li class="site-menu-item has-sub" title=" Quản lý tuyển dụng"><a href="javascript:void(0)" id="menu6952"><i class="site-menu-icon glyphicon glyphicon-briefcase" aria-hidden="true"></i><span class="site-menu-title" style="display:none">Quản lý tuyển dụng</span><span class="site-menu-arrow" style="display:none"></span></a><ul class="site-menu-sub"><a href="javascript:void(0)" id="menu6952"></a><li class="site-menu-item"><a href="javascript:void(0)" id="menu6952"></a><a class="animsition-link" href="/VRS/recruiment-timeline-infomation" id="menu6953"> <span class="site-menu-title" style="display:none">Quản lý đợt tuyển dụng</span></a></li><li class="site-menu-item"><a class="animsition-link" href="/VRS/recruiment-infomation" id="menu6954"> <span class="site-menu-title" style="display:none">Quản lý vị trí tuyển dụng </span></a></li></ul></li><li class="site-menu-item" title=" Quản lý ứng viên"><a href="/VRS/member" id="menu6955"><i class="site-menu-icon glyphicon glyphicon-user" aria-hidden="true"></i><span class="site-menu-title" style="display:none">Quản lý ứng viên</span></a></li><li class="site-menu-item" title=" Quản lý đơn vị tuyển dụng"><a href="/VRS/recruitment-organizations" id="menu6957"><i class="site-menu-icon glyphicon glyphicon-globe" aria-hidden="true"></i><span class="site-menu-title" style="display:none">Quản lý đơn vị tuyển dụng</span></a></li><li class="site-menu-item" title=" Suggest management"><a href="/VRS/suggest" id="menu6956"><span class="site-menu-title" style="display:none">Suggest management</span></a></li><li class="site-menu-item" title=" Quản lý danh mục"><a href="/VRS/category-management" id="menu6958"><i class="site-menu-icon glyphicon glyphicon-list-alt" aria-hidden="true"></i><span class="site-menu-title" style="display:none">Quản lý danh mục</span></a></li><li class="site-menu-item" title=" Quản lý trang"><a href="/VRS/page" id="menu6951"><i class="site-menu-icon glyphicon glyphicon-open-file" aria-hidden="true"></i><span class="site-menu-title" style="display:none">Quản lý trang</span></a></li><li class="site-menu-item" title=" Quản lý cấu hình danh mục liên quan"><a href="/VRS/groups" id="menu6968"><i class="site-menu-icon glyphicon glyphicon-th-large" aria-hidden="true"></i><span class="site-menu-title" style="display:none">Quản lý cấu hình danh mục liên quan</span></a></li><li class="site-menu-item" title=" Quản lý lịch họp"><a href="/VRS/meeting" id="menu7000"><i class="site-menu-icon glyphicon glyphicon-calendar" aria-hidden="true"></i><span class="site-menu-title" style="display:none">Quản lý lịch họp</span></a></li> <li class="site-menu-item"><a href="/VRS/logout"><i class="site-menu-icon glyphicon glyphicon-log-out" aria-hidden="true"></i><span class="site-menu-title" style="display:none">Đăng xuất</span></a></li>
+                </ul>
+            </div>
+		</div>
+	</nav>
+</div>
+<script>
+
+	$(function(){
+		$('.container-page').css("left", "100px");
+		$('.container-page').css("margin-right", "80px");
+		
+		$('#toggleMenubar').on('click', function(){
+			var className = $('#sidebar').attr('class');
+			if(className === 'active'){
+				$('.container-page').css("left", "100px");
+				$('.container-page').css("margin-right", "80px");
+                window.dispatchEvent(new Event('resize'));
+			}
+			else{
+				$('.container-page').css("left", "240px");
+				$('.container-page').css("margin-right", "220px");
+                window.dispatchEvent(new Event('resize'));
+			}
+		});
+	});
+</script>
+    <div class="page container-page" style="left: 100px; margin-right: 80px;">
+        <div class="page-content container-fluid">
+            
+
+
+
+
+
+<style>
+    #checkGroupName {
+        font-family: tahoma, arial, helvetica;
+        font-size: 11px;
+        color: #FF0000
+    }
+
+    .tags {
+        white-space: nowrap;
+    }
+
+    .tagName {
+        font-size: medium;
+    }
+
+    .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove {
+        float: left;
+        margin-left: 5px;
+        margin-right: 5px;
+        color: red;
+    }
+
+    .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice {
+        background-color: aliceblue;
+    }
+
+    .select2-container--bootstrap .select2-results__option[aria-selected=true] {
+        display: none;
+    }
+
+    .select2-container--bootstrap.select2-container--open {
+        z-index: 2000 !important;
+    }
+
+    .select2-container .select2-search--inline {
+        width: 100% !important;
+    }
+
+    .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field {
+        width: 100% !important;
+    }
+
+    .select2-container--bootstrap .select2-selection.form-control {
+        height: 36px;
+    }
+
+    .hide-items {
+        display: none;
+    }
+
+    .show-more {
+        cursor: pointer;
+    }
+
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th, .table > thead > tr > th {
+        line-height: 35px;
+    }
+
+    /*Chỉnh sửa ô chọn tên danh mục phần search*/
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        line-height: 35px !important;
+    }
+
+    .select2-container--default .select2-selection--single {
+        height: 2.573rem !important;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 35px !important;
+    }
+</style>
+
+
+
+<div class="row">
+    <div id="divSearch" class="col-md-12">
+        
+
+
+
+
+
+
+<div class="panel panel-bordered" id="formSearch">
+    <div class="panel-heading">
+        <strong>
+            <i class="fa fa-th"></i>
+            <span>Thông tin tìm kiếm</span>
+        </strong>
+    </div>
+    <div class="panel-body">
+        <form id="groupFormSearch" class="form-horizontal" action="/VRS/groups" method="post">
+            
+            <div class="form-group row">
+                <label class="col-xl-2 form-control-label">
+                    Tên cấu hình
+                </label>
+                <div class="col-xl-3">
+                    <input id="groupName" name="name" type="text" autofocus="autofocus" class="form-control validate[maxSize[100]]" value="" maxlength="100" autocomplete="off">
+                    <label id="checkGroupName" style="color: #FF0000; font-size: 11px; display: none; width: 100%;">
+                        * Tên cấu hình không chứa ký tự đặc biệt
+                    </label>
+                </div>
+
+                <label class="col-xl-2 form-control-label">
+                    Loại danh mục
+                </label>
+                <div class="col-xl-3">
+                    <div><div class="chosen-container chosen-container-single" style="width: 100%" title="" id="categoryType_chosen"><a class="chosen-single" style=""><span>Ngôn ngữ</span><div><b></b></div></a><div class="chosen-drop" style="width: 100%;"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"><li class="active-result result-selected" style="" data-option-array-index="16"><em>Ngôn ngữ</em></li></ul></div><select id="categoryType" name="categoryType" class="form-control selectChosen chosen-select" onchange="loadCategories(this.value)" data-placeholder="---------Tất cả---------" tabindex="-1" style="position: absolute; opacity: 0;">
+                        <option value="">---------Tất cả---------</option>
+                        <option value="132">Cấp độ công việc</option><option value="217">Cấu hình nội dung động</option><option value="209">Chuyên ngành</option><option value="218">Danh muc moi</option><option value="219">Danh muc moi A</option><option value="126">Danh mục trúng tuyển</option><option value="212">Danh mục trường học</option><option value="136">Danh sách thị trường</option><option value="215">Là quá trình đào tạo chính</option><option value="57">Loại hình đào tạo</option><option value="220">Loại lịch họp</option><option value="131">Loại thời gian làm việc</option><option value="61">Loại tốt nghiệp</option><option value="134">Loại tuyển dụng</option><option value="23">Ngành nghề tuyển dụng</option><option value="135">Ngôn ngữ</option><option value="62">Tiền tệ</option><option value="221">trạng thái server</option><option value="56">Trình độ đào tạo</option><option value="63">Trình độ ngoại ngữ</option><option value="206">Vị trí tuyển dụng</option>
+                    </select></div></div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-xl-2 form-control-label ">
+                    Tên danh mục
+                </label>
+                <div class="col-xl-3" id="div-list-position">
+
+
+
+                    <span class="select2 select2-container select2-container--default select2-container--below select2-container--open" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="true" tabindex="0" aria-labelledby="select2-category-container" aria-owns="select2-category-results"><span class="select2-selection__rendered" id="select2-category-container" title="---------Tất cả---------" style="">---------Tất cả---------</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span><select id="category" class="form-control select2 select2-hidden-accessible" style="width: 100%" tabindex="-1" aria-hidden="true"><option value="">---------Tất cả---------</option><option value="463">Chinese</option><option value="460">Thái Lan</option><option value="362">Tiếng Bồ Đào Nha</option><option value="80002">Tiếng Hàn</option><option value="80003">Tiếng Nga</option><option value="347">Tiếng Nhật</option><option value="80005">Tiếng Pháp</option><option value="361">Tiếng Việt</option></select></span>
+                </div>
+            </div>
+
+            <div class="form-group row vt-align-center">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary btn-sm ladda-button" onclick="processSearchGroup(); return false;">
+                        <span>
+                            <i class="fa fa-search"></i>
+                            Tìm kiếm
+                        </span>
+                    </button>
+                </div>
+            </div>
+        <div>
+<input type="hidden" name="_csrf" value="3265e567-d615-434f-9a7f-98b3021f5ac7">
+</div></form>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function() {
+        $('.select2').select2();
+    });
+
+    $(document).ready(function () {
+        initChosen();
+        // đưa select xuống dưới để error hiển thị phía dưới
+        setTimeout(function () {
+            $('select').each(function (i, el) {
+                $(el).next().append($(el));
+            })
+        }, 100);
+    });
+
+    document.getElementById('formSearch').onkeydown = function (event){
+        if (event.which == 13 || event.keyCode == 13) {
+            processSearchGroup()
+        }
+    }
+
+    $('#groupName').on('keypress', function (event) {
+        if (event.which == 13 || event.keyCode == 13) {
+            processSearchGroup()
+        } else {
+            var regex = new RegExp("^[.a-zA-Z0-9aAàÀảẢãÃáÁạẠăĂằẰẳẲẵẴắẮặẶâÂầẦẩẨẫẪấẤậẬbBcCdDđĐeEèÈẻẺẽẼéÉẹẸêÊềỀểỂễỄếẾệỆ fFgGhHiIìÌỉỈĩĨíÍịỊjJkKlLmMnNoOòÒỏỎõÕóÓọỌôÔồỒổỔỗỖốỐộỘơƠờỜởỞỡỠớỚợỢpPqQrRsStTu UùÙủỦũŨúÚụỤưƯừỪửỬữỮứỨựỰvVwWxXyYỳỲỷỶỹỸýÝỵỴzZ]+$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                document.getElementById('checkGroupName').style.display = 'block';
+                setTimeout(function (){document.getElementById('checkGroupName').style.display = 'none';}, 4000)
+                event.preventDefault();
+                return false;
+            } else {
+                document.getElementById('checkGroupName').style.display = 'none';
+            }
+        }
+    });
+</script>
+
+        <div id="searchResult">
+
+
+
+
+
+
+
+
+<div id="searchResult">
+    <div class="panel panel-bordered">
+        <header class="panel-heading" style="position: relative;">
+            <strong>
+                <i class="fa fa-th"></i>
+                <span>Danh sách cấu hình danh mục liên quan</span>
+            </strong>
+                
+                
+            <div style=" position: absolute; top: 8px; right: 20px;">
+                <button type="button" class="btn btn-primary btn-sm ladda-button" onclick="openGroupModal()">
+		                    <span>
+		                        <i class="fa fa-plus"></i>
+		                        Thêm mới
+		                    </span>
+                </button>
+            </div>
+                
+                
+            <div style="clear: both;"></div>
+        </header>
+        <div class="panel-body">
+            
+<table id="groupTable" class="table table-striped table-bordered table-hover">
+<thead>
+<tr>
+<th class="size-1">STT</th>
+<th class="size-1">Sửa</th>
+<th class="size-1">Xóa</th>
+<th class="size-6 sortable">
+<a href="javascript://nop/" onclick="new Ajax.Updater('searchResult', '/VRS/groups/search?categoryType=&amp;name=&amp;_csrf=3265e567-d615-434f-9a7f-98b3021f5ac7&amp;_csrf=3265e567-d615-434f-9a7f-98b3021f5ac7&amp;sort=name&amp;category=&amp;dir=asc&amp;_=1614314351181&amp;ajax=true'); return false;">Tên cấu hình</a></th>
+<th class="size-4">Loại danh mục</th>
+<th class="size-6">Danh mục liên quan</th></tr></thead>
+<tbody>
+<tr class="odd">
+<td class="vt-align-center">1</td>
+<td class="vt-align-center">
+                    <a class="btn-table edit" title="Sửa" onclick="openEditGroupModal(278)"><i class="fa fa-edit"></i></a>
+                </td>
+<td class="vt-align-center">
+                    <a class="btn-table delete" title="Xóa" onclick="processDeleteGroup(278)"><i class="fa fa-trash"></i></a>
+                </td>
+<td>Ngôn ngữ1</td>
+<td>Ngôn ngữ</td>
+<td>
+                    
+                        <span class="tags show-tags">Tiếng Bồ Đào Nha</span>
+                        , 
+                    
+                        <span class="tags show-tags">Tiếng Hàn</span>
+                        
+                    
+                    
+                    
+                </td></tr>
+<tr class="even">
+<td class="vt-align-center">2</td>
+<td class="vt-align-center">
+                    <a class="btn-table edit" title="Sửa" onclick="openEditGroupModal(277)"><i class="fa fa-edit"></i></a>
+                </td>
+<td class="vt-align-center">
+                    <a class="btn-table delete" title="Xóa" onclick="processDeleteGroup(277)"><i class="fa fa-trash"></i></a>
+                </td>
+<td>1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111112</td>
+<td>Ngôn ngữ</td>
+<td>
+                    
+                        <span class="tags show-tags">Tiếng Nhật</span>
+                        , 
+                    
+                        <span class="tags show-tags">Tiếng Việt</span>
+                        
+                    
+                    
+                    
+                </td></tr>
+<tr class="odd">
+<td class="vt-align-center">3</td>
+<td class="vt-align-center">
+                    <a class="btn-table edit" title="Sửa" onclick="openEditGroupModal(214)"><i class="fa fa-edit"></i></a>
+                </td>
+<td class="vt-align-center">
+                    <a class="btn-table delete" title="Xóa" onclick="processDeleteGroup(214)"><i class="fa fa-trash"></i></a>
+                </td>
+<td>Nganh nghe lien quan</td>
+<td>Ngành nghề tuyển dụng</td>
+<td>
+                    
+                        <span class="tags show-tags">Chuỗi cung ứng</span>
+                        , 
+                    
+                        <span class="tags show-tags">Công nghệ thông tin</span>
+                        , 
+                    
+                        <span class="tags show-tags">Đầu tư xây dựng</span>
+                        
+                    
+                    
+                    
+                </td></tr>
+<tr class="even">
+<td class="vt-align-center">4</td>
+<td class="vt-align-center">
+                    <a class="btn-table edit" title="Sửa" onclick="openEditGroupModal(205)"><i class="fa fa-edit"></i></a>
+                </td>
+<td class="vt-align-center">
+                    <a class="btn-table delete" title="Xóa" onclick="processDeleteGroup(205)"><i class="fa fa-trash"></i></a>
+                </td>
+<td>Tiền</td>
+<td>Loại tuyển dụng</td>
+<td>
+                    
+                        <span class="tags show-tags">Nội bộ</span>
+                        , 
+                    
+                        <span class="tags show-tags">Tuyển ngoài</span>
+                        
+                    
+                    
+                    
+                </td></tr>
+<tr class="odd">
+<td class="vt-align-center">5</td>
+<td class="vt-align-center">
+                    <a class="btn-table edit" title="Sửa" onclick="openEditGroupModal(202)"><i class="fa fa-edit"></i></a>
+                </td>
+<td class="vt-align-center">
+                    <a class="btn-table delete" title="Xóa" onclick="processDeleteGroup(202)"><i class="fa fa-trash"></i></a>
+                </td>
+<td>phó tổng</td>
+<td>Loại thời gian làm việc</td>
+<td>
+                    
+                        <span class="tags show-tags">Thời vụ</span>
+                        , 
+                    
+                        <span class="tags show-tags">Toàn thời gian</span>
+                        
+                    
+                    
+                    
+                </td></tr>
+<tr class="even">
+<td class="vt-align-center">6</td>
+<td class="vt-align-center">
+                    <a class="btn-table edit" title="Sửa" onclick="openEditGroupModal(201)"><i class="fa fa-edit"></i></a>
+                </td>
+<td class="vt-align-center">
+                    <a class="btn-table delete" title="Xóa" onclick="processDeleteGroup(201)"><i class="fa fa-trash"></i></a>
+                </td>
+<td>giám đốc</td>
+<td>Loại tốt nghiệp</td>
+<td>
+                    
+                        <span class="tags show-tags">Kém</span>
+                        , 
+                    
+                        <span class="tags show-tags">Khá</span>
+                        
+                    
+                    
+                    
+                </td></tr>
+<tr class="odd">
+<td class="vt-align-center">7</td>
+<td class="vt-align-center">
+                    <a class="btn-table edit" title="Sửa" onclick="openEditGroupModal(199)"><i class="fa fa-edit"></i></a>
+                </td>
+<td class="vt-align-center">
+                    <a class="btn-table delete" title="Xóa" onclick="processDeleteGroup(199)"><i class="fa fa-trash"></i></a>
+                </td>
+<td>phỏng vấn</td>
+<td>Loại lịch họp</td>
+<td>
+                    
+                        <span class="tags show-tags">Phỏng vấn hội đồng</span>
+                        , 
+                    
+                        <span class="tags show-tags">Thi IQ &amp; Tiếng Anh</span>
+                        
+                    
+                    
+                    
+                </td></tr>
+<tr class="even">
+<td class="vt-align-center">8</td>
+<td class="vt-align-center">
+                    <a class="btn-table edit" title="Sửa" onclick="openEditGroupModal(198)"><i class="fa fa-edit"></i></a>
+                </td>
+<td class="vt-align-center">
+                    <a class="btn-table delete" title="Xóa" onclick="processDeleteGroup(198)"><i class="fa fa-trash"></i></a>
+                </td>
+<td>báo cáo</td>
+<td>Loại tuyển dụng</td>
+<td>
+                    
+                        <span class="tags show-tags">Nội bộ và Tuyển ngoài</span>
+                        , 
+                    
+                        <span class="tags show-tags">Tuyển lẻ</span>
+                        
+                    
+                    
+                    
+                </td></tr>
+<tr class="odd">
+<td class="vt-align-center">9</td>
+<td class="vt-align-center">
+                    <a class="btn-table edit" title="Sửa" onclick="openEditGroupModal(196)"><i class="fa fa-edit"></i></a>
+                </td>
+<td class="vt-align-center">
+                    <a class="btn-table delete" title="Xóa" onclick="processDeleteGroup(196)"><i class="fa fa-trash"></i></a>
+                </td>
+<td>duy trì</td>
+<td>Trình độ ngoại ngữ</td>
+<td>
+                    
+                        <span class="tags show-tags">Người bản ngữ</span>
+                        , 
+                    
+                        <span class="tags show-tags">Sơ cấp</span>
+                        
+                    
+                    
+                    
+                </td></tr>
+<tr class="even">
+<td class="vt-align-center">10</td>
+<td class="vt-align-center">
+                    <a class="btn-table edit" title="Sửa" onclick="openEditGroupModal(195)"><i class="fa fa-edit"></i></a>
+                </td>
+<td class="vt-align-center">
+                    <a class="btn-table delete" title="Xóa" onclick="processDeleteGroup(195)"><i class="fa fa-trash"></i></a>
+                </td>
+<td>kế toán</td>
+<td>Trình độ đào tạo</td>
+<td>
+                    
+                        <span class="tags show-tags">Chứng nhận</span>
+                        , 
+                    
+                        <span class="tags show-tags">Giải thưởng</span>
+                        
+                    
+                    
+                    
+                </td></tr></tbody></table><div class="callout callout-info pagepanner"><p id="pagebannerId">Tìm thấy 15, hiển thị từ 1 đến 10</p></div><span class="pagelinks">[<a style="cursor: context-menu!important;">Đầu</a>/<a style="cursor: context-menu!important;">Trước</a>] <strong>1</strong><a href="javascript://nop/" title="Chuyển đến trang 2" onclick="new Ajax.Updater('searchResult', '/VRS/groups/search?categoryType=&amp;name=&amp;_csrf=3265e567-d615-434f-9a7f-98b3021f5ac7&amp;_csrf=3265e567-d615-434f-9a7f-98b3021f5ac7&amp;page=2&amp;category=&amp;_=1614314351181&amp;ajax=true'); return false;">2</a> [<a href="javascript://nop/" onclick="new Ajax.Updater('searchResult', '/VRS/groups/search?categoryType=&amp;name=&amp;_csrf=3265e567-d615-434f-9a7f-98b3021f5ac7&amp;_csrf=3265e567-d615-434f-9a7f-98b3021f5ac7&amp;page=2&amp;category=&amp;_=1614314351181&amp;ajax=true'); return false;">Sau</a>/<a href="javascript://nop/" onclick="new Ajax.Updater('searchResult', '/VRS/groups/search?categoryType=&amp;name=&amp;_csrf=3265e567-d615-434f-9a7f-98b3021f5ac7&amp;_csrf=3265e567-d615-434f-9a7f-98b3021f5ac7&amp;page=2&amp;category=&amp;_=1614314351181&amp;ajax=true'); return false;">Cuối</a>]</span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(".order1").append('<span class="glyphicons glyphicons-sort-by-attributes"></span>');
+        $(".order2").append('<span class="glyphicons glyphicons-sort-by-attributes-alt"></span>');
+    </script>
+
+</div>
+
+</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div id="groupModal" class="modal fade modal-primary" aria-hidden="true" aria-labelledby="exampleModalTitle" role="dialog" data-backdrop="static"></div>
+<div id="groupEditModal" class="modal fade modal-primary" aria-hidden="true" aria-labelledby="exampleModalTitle" role="dialog" data-backdrop="static"></div>
+
+
+
+
+
+
+
+
+<div id="saveResultDisplayTag">
+    <input type="hidden" name="extraValue" id="extraValue" value="">
+    
+    <script type="text/javascript">
+        processReturnMessage(-1, '', '', '');
+    </script>
+    
+</div>
+
+
+<script type="text/javascript">
+    /* Tìm kiếm */
+    function processSearchGroup() {
+        if ($('#groupFormSearch').validationEngine('validate')) {
+            var areaId = "searchResult";
+            var actionUrl = "/VRS/groups/search?";
+            $("#groupFormSearch").val($("#groupFormSearch").val().trim());
+            var category = $('#category').val();
+            var formData = $('#groupFormSearch').serializeArray();
+            if (Array.isArray(formData)) {
+                formData.push({"name": "category", "value": category});
+            }
+            dttUpdateAjaxCheckToken("GET", areaId, actionUrl, formData, null, 'Token hết hạn');
+        }
+    }
+
+    $(function () {
+        processSearchGroup();
+    });
+
+    function openGroupModal() {
+        var areaId = "groupModal";
+        var actionUrl = "/VRS/groups/add";
+        var formData = "";
+        dttUpdateAjaxCheckToken("GET", areaId, actionUrl, formData, null, 'Token hết hạn');
+    }
+
+    function openEditGroupModal(id) {
+        var areaId = "groupEditModal";
+        var actionUrl = "/VRS/groups/" + id + "/edit";
+        var formData = "";
+        dttUpdateAjaxCheckToken("GET", areaId, actionUrl, formData, null, 'Token hết hạn');
+    }
+
+    function processDeleteGroup(id) {
+        var message = 'Bạn có muốn xóa bản ghi hiện tại?';
+        if (id && dttConfirmDelete(message)) {
+            var areaId = "saveResultDisplayTag";
+            var actionUrl = "/VRS/groups/delete/" + id;
+            dttDeferredAjaxCheckToken("POST", areaId, actionUrl, "", "", 'Token hết hạn').done(function () {
+                callbackAfterSaveGroup();
+            });
+        }
+    }
+
+    function processSaveGroup() {
+        var message = 'Bạn có muốn lưu lại thông tin?';
+        var lst = $('#categoryId').val();
+        var valid = $('#catGroupForm').validationEngine('validate')
+        if (lst == null || lst == undefined || lst.length < 2) {
+            document.getElementById('checkCategory').style.display = 'block';
+        } else {
+            document.getElementById('checkCategory').style.display = 'none';
+            if (valid && dttConfirmSave(message)) {
+                var areaId = "saveResultDisplayTag";
+                var actionUrl = "/VRS/groups/add";
+
+                var formData = $('#catGroupForm').serializeArray();
+                if (Array.isArray(formData)) {
+                    formData.push({"name": "categoryId", "value": lst});
+                }
+                dttUpdateAjaxCheckToken("POST", areaId, actionUrl, formData, null, 'Token hết hạn');
+            }
+        }
+    }
+
+    function processEditGroup(id) {
+        var message = 'Bạn có muốn lưu lại thông tin?';
+        var lst = $('#categoryEditId').val();
+        var valid = $('#catGroupEditForm').validationEngine('validate')
+        if (lst == null || lst == undefined || lst.length < 2) {
+            document.getElementById('checkCategoryEdit').style.display = 'block';
+        } else {
+            document.getElementById('checkCategoryEdit').style.display = 'none';
+            if (valid && dttConfirmSave(message)) {
+                var areaId = "saveResultDisplayTag";
+                var actionUrl = "/VRS/groups/" + id + "/edit";
+                var formData = $('#catGroupEditForm').serializeArray();
+                if (Array.isArray(formData)) {
+                    formData.push({"name": "categoryId", "value": lst});
+                }
+                dttUpdateAjaxCheckToken("POST", areaId, actionUrl, formData, null, 'Token hết hạn');
+            }
+        }
+    }
+
+    function callbackAfterSaveGroup() {
+        $('#groupModal').modal('hide');
+        processSearchGroup();
+        scrollTop();
+    }
+
+    function callbackAfterUpdateGroup() {
+        $('#groupEditModal').modal('hide');
+        processSearchGroup();
+        scrollTop();
+    }
+
+    function loadCategories(value) {
+        $('#category').empty()
+        $('#category').val(null).trigger('change');
+        jQuery.ajax({
+            type: 'GET',
+            url: /VRS/ +'api/v1/categories?categoryType=' + value,
+            success: function (res) {
+                var items = "<option value=''>---------Tất cả---------</option>";
+                $.each(res.data, function (i, obj) {
+                    items += "<option value='" + obj.categoryId + "'>" + obj.name + "</option>";
+                });
+                $('#category').html(items);
+                $('#category').val("").trigger('change');
+            },
+            error: function (e) {
+                console.log('erros', e);
+            }
+        })
+    }
+
+    function showTags(id) {
+        $('.show-more-' + id).toggle();
+        $('.hide-tags-' + id).toggle();
+    }
+
+</script>
+		</div>
+    </div>
+
+    
+
+<c:set var="contextPath" value="/VRS/">
+<!-- Footer -->
+<footer class="site-footer active">
+    <div class="site-footer-legal" style="padding-top: 3px;">
+     © 2019 Developed by the Software Center Viettel Group
+    </div>
+    <div class="site-footer-right">
+        <ul>
+            <a href="/VRS?locale=vi"><img alt="" src="/VRS/share/images/vn.png"></a>
+            <a href="/VRS?locale=en"><img alt="" src="/VRS/share/images/el.png"></a>
+        </ul>
+    </div>
+    <div class="site-footer-right" style="padding-top: 3px;">
+        Copyright of Viettel Group
+    </div>
+</footer>
+<!-- Core  -->
+<script src="/VRS/share/js/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+<script src="/VRS/share/js/vendor/popper-js/umd/popper.min.js"></script>
+<script src="/VRS/share/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="/VRS/share/js/ui/jquery-ui.min.js"></script>
+<script src="/VRS/share/dynaTree/jquery.cookie.js" type="text/javascript"></script>
+<script src="/VRS/share/dynaTree/jquery.dynatree.js" type="text/javascript"></script>
+<script src="/VRS/share/js/common.js"></script>
+<script src="/VRS/share/js/vendor/animsition/animsition.js"></script>
+<script src="/VRS/share/js/vendor/mousewheel/jquery.mousewheel.js"></script>
+<script src="/VRS/share/js/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+<script src="/VRS/share/js/vendor/asscrollable/jquery-asScrollable.js"></script>
+
+<!-- Month Picker -->
+<script src="/VRS/share/js/jquery.mtz.monthpicker.js"></script>
+
+<!-- Plugins -->
+<script src="/VRS/share/js/vendor/switchery/switchery.js"></script>
+<script src="/VRS/share/js/vendor/intro-js/intro.js"></script>
+<script src="/VRS/share/js/vendor/screenfull/screenfull.js"></script>
+<script src="/VRS/share/js/vendor/slidepanel/jquery-slidePanel.js"></script>
+<script src="/VRS/share/js/vendor/skycons/skycons.js"></script>
+<script src="/VRS/share/js/vendor/chartist/chartist.min.js"></script>
+<script src="/VRS/share/js/vendor/aspieprogress/jquery-asPieProgress.min.js"></script>
+<script src="/VRS/share/js/vendor/jvectormap/jquery-jvectormap.min.js"></script>
+<script src="/VRS/share/js/vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js"></script>
+<script src="/VRS/share/js/vendor/matchheight/jquery.matchHeight-min.js"></script>
+
+<!-- Scripts -->
+<script src="/VRS/share/js/Component.js"></script>
+<script src="/VRS/share/js/Plugin.js"></script>
+<script src="/VRS/share/js/Base.js"></script>
+<script src="/VRS/share/js/Config.js"></script>
+<script src="/VRS/share/js/dataPicker.js"></script>
+
+<script src="/VRS/share/js/Menubar.js"></script>
+<script src="/VRS/share/js/Sidebar.js"></script>
+<script src="/VRS/share/js/PageAside.js"></script>
+<script src="/VRS/share/js/menu.js"></script>
+
+<!-- Config -->
+<script src="/VRS/share/js/colors.js"></script>
+<script src="/VRS/share/js/tour.js"></script>
+<script>
+    Config.set('assets', '/center/assets');
+</script>
+
+
+<!-- Page -->
+<script src="/VRS/share/js/viettel.js"></script>
+<script src="/VRS/share/js/Site.js"></script>
+<script src="/VRS/share/js/asscrollable.js"></script>
+<script src="/VRS/share/js/slidepanel.js"></script>
+<script src="/VRS/share/js/switchery.js"></script>
+<script src="/VRS/share/js/matchheight.js"></script>
+<script src="/VRS/share/js/jvectormap.js"></script>
+<script src="/VRS/share/js/vendor/toastr/toastr.js"></script>
+<script src="/VRS/share/js/v1.js"></script>
+
+<script src="/VRS/share/js/vendor/bootstrap-select.js"></script>
+<script src="/VRS/share/js/vendor/bootstrap-datepicker.js"></script>
+<script src="/VRS/share/js/vendor/bootbox.js"></script>
+<script src="/VRS/share/js/vendor/BaseApp.js"></script>
+<!-- <script src="/VRS/share/js/vendor/Taskboard.js"></script> -->
+<!-- <script src="/VRS/share/js/vendor/apps/taskboard.js"></script> -->
+
+
+<script src="/VRS/share/js/inlineValidation/languages/jquery.validationEngine_vi.js"></script>
+<script src="/VRS/share/js/inlineValidation/jquery.validationEngine.js"></script>
+<script src="/VRS/share/js/inlineValidation/validate.js"></script>
+<script src="/VRS/share/js/inlineValidation/data-validate.js"></script>
+<script src="/VRS/share/js/jquery.amsify.suggestags.js"></script>
+<script src="/VRS/share/ckeditor/ckeditor.js"></script><script type="text/javascript" src="https://27.71.233.234:8888/VRS/share/ckeditor/core/loader.js"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/event.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/editor_basic.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/env.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/ckeditor_basic.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/log.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/tools.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dtd.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/event.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/domobject.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/node.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/window.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/document.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/nodelist.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/element.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/documentfragment.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/walker.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/range.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/iterator.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/command.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/ckeditor_base.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/config.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/filter.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/focusmanager.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/keystrokehandler.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/lang.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/scriptloader.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/resourcemanager.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/plugins.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/ui.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/editor.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/htmlparser.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/htmlparser/basicwriter.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/htmlparser/node.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/htmlparser/comment.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/htmlparser/text.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/htmlparser/cdata.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/htmlparser/fragment.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/htmlparser/filter.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/htmldataprocessor.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/htmlparser/element.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/template.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/ckeditor.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/creators/inline.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/creators/themedui.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/editable.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/selection.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/style.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/promise.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/selection/optimization.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/comment.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/elementpath.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/text.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/dom/rangelist.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/skin.js" type="text/javascript"></script><script src="https://27.71.233.234:8888/VRS/share/ckeditor/core/_bootstrap.js" type="text/javascript"></script>
+<script>
+ var messageDataNotFound = "Không tìm thấy dữ liệu";
+</script>
+<script src="/VRS/share/js/chosen.v1.0.0.jquery.js"></script>
+<script type="text/javascript">
+toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-bottom-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "2000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+}
+</script>
+<!-- Tab panel -->
+<script src="/VRS/share/global/js/Plugin/tabs.js"></script>
+    <div id="progressSpinnerCheck" class="">
+        <div id="progressSpinner">
+            <div class="ui-progress-spinner" ng-reflect-klass="ui-progress-spinner">
+                <svg class="ui-progress-spinner-svg" viewBox="25 25 50 50" style="animation-duration: 2s;">
+                    <circle class="ui-progress-spinner-circle" cx="50" cy="50" r="20" stroke-miterlimit="10" fill="none" stroke-width="2"></circle>
+                </svg>
+            </div>
+        </div>
+        <div class="modal-backdrop fade" id="progressSpinnerBackdrop" style="z-index: 88888888"></div>
+    </div>
+    <input type="hidden" name="_csrf" value="3265e567-d615-434f-9a7f-98b3021f5ac7">
+
+</c:set></c:set><div class="ui-widget-overlay data-picker-overlay" style="display: none;"></div><span class="select2-container select2-container--default select2-container--open" style="position: absolute; top: 259.031px; left: 310.828px;"><span class="select2-dropdown select2-dropdown--below" dir="ltr" style="width: 246.25px;"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-category-results" aria-expanded="true" aria-hidden="false"><li role="treeitem" aria-live="assertive" class="select2-results__option select2-results__message">No results found</li></ul></span></span></span></body></html>
